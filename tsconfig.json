@@ -1,6 +1,8 @@
 {
-  "extends": [],
   "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     // This is a component library, so "ESNext" is a good choice. Also it requires very little down-leveling during transpilation.
     "target": "ESNext",
 
@@ -67,6 +69,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": true
   },
-  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
-  "exclude": ["./src/**/*.stories.*"]
+  "include": ["src"],
+  "exclude": ["./src/**/*.stories.*"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,28 +1,26 @@
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
-import s from "./button.module.css";
-import clsx from "clsx";
-import { Slot } from "@radix-ui/react-slot";
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+
+import { Slot } from '@radix-ui/react-slot'
+import clsx from 'clsx'
+
+import s from './button.module.css'
 
 type Props = {
-  asChild?: boolean;
-  variant?: "primary" | "secondary" | "outlined" | "ghost";
-  fullWidth?: boolean;
-} & ComponentPropsWithoutRef<"button">;
+  asChild?: boolean
+  fullWidth?: boolean
+  variant?: 'ghost' | 'outlined' | 'primary' | 'secondary'
+} & ComponentPropsWithoutRef<'button'>
 
-export const Button = forwardRef<ElementRef<"button">, Props>(
-  ({ variant = "primary", fullWidth, className, asChild, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
+export const Button = forwardRef<ElementRef<'button'>, Props>(
+  ({ asChild, className, fullWidth, variant = 'primary', ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button'
+
     return (
       <Comp
         {...props}
+        className={clsx(s.buttonRoot, s[variant], fullWidth && s.fullWidth, className)}
         ref={ref}
-        className={clsx(
-          s.buttonRoot,
-          s[variant],
-          fullWidth && s.fullWidth,
-          className,
-        )}
       />
-    );
-  },
-);
+    )
+  }
+)
