@@ -70,6 +70,5 @@
     "noUnusedParameters": true
   },
   "include": ["src"],
-  "exclude": ["./src/**/*.stories.*"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["./src/**/*.stories.*"]
 }
