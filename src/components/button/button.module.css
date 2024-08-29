@@ -1,32 +1,23 @@
-.buttonRoot {
-  all: unset;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-
-  box-sizing: border-box;
-  padding: 0.5rem 1rem;
-
-  border-radius: 0.25rem;
+.root {
+  @apply cursor-pointer flex items-center box-border p-2 rounded;
 }
 
-.buttonRoot.primary {
-  color: white;
-  background-color: blue;
+.root.primary {
+  @apply text-white bg-blue-300;
 }
 
-.buttonRoot.secondary {
-  color: blue;
-  background-color: gray;
+.root.secondary {
+  @apply text-blue-400 bg-gray-400;
 }
 
-.buttonRoot:focus-visible {
-  outline: 2px solid blue;
+.root:focus-visible {
+  @apply outline outline-2 outline-blue-400;
 }
 
-.buttonRoot.fullWidth {
-  justify-content: center;
-  width: 100%;
+.root.fullwidth {
+  @apply justify-center w-1;
 }

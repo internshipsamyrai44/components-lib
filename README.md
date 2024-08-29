@@ -13,7 +13,7 @@
   pnpm install
 ```
 
-- the project is hosting and available on http://localhost:3000
+- the project is hosting and available on http://localhost:5173
   <br/>
 
 ### **Development**
