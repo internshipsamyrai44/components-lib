@@ -13,7 +13,7 @@
     "module": "ESNext",
 
     // The types defined in "vite/client" are included in global scope.
-    "types": ["vite/client"],
+    "types": ["node"],
 
     // Do not emit compiled output files, vite will take care of the that.
     "noEmit": true,
@@ -50,7 +50,7 @@
     "isolatedModules": true,
 
     // Allow importing TypeScript modules.
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
 
     // Enfore "type" modifier for type imports.
     "verbatimModuleSyntax": false,
