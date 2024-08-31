@@ -7,18 +7,18 @@ import s from './button.module.css'
 
 type Props = {
   asChild?: boolean
-  fullwidth?: boolean
+  fullWidth?: boolean
   variant?: 'ghost' | 'outlined' | 'primary' | 'secondary'
 } & ComponentPropsWithoutRef<'button'>
 
 export const Button = forwardRef<ElementRef<'button'>, Props>(
-  ({ asChild, className, fullwidth, variant = 'primary', ...props }, ref) => {
+  ({ asChild, className, fullWidth, variant = 'primary', ...props }, ref) => {
     const Comp = asChild ? Slot : 'button'
 
     return (
       <Comp
         {...props}
-        className={clsx(s.root, s[variant], fullwidth && s.fullwidth, className)}
+        className={clsx(s.root, s[variant], fullWidth && s.fullWidth, className)}
         ref={ref}
       />
     )
