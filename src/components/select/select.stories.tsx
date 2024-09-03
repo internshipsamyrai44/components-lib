@@ -30,13 +30,54 @@ export const Primary: Story = {
   args: {
     children: (
       <>
-        {options.map(({ label, value }, index) => {
+        <SelectItem value={'1'}>First option</SelectItem>
+        <SelectItem value={'2'}>Second option</SelectItem>
+        <SelectItem value={'3'}>Third option</SelectItem>
+        <SelectItem value={'4'}>Fourth option</SelectItem>
+        <SelectItem value={'5'}>Fifth option</SelectItem>
+      </>
+    ),
+    placeholder: 'Primary Select',
+  },
+}
+
+export const Alt: Story = {
+  args: {
+    children: (
+      <>
+        {options.map(({ label, value }) => {
           return (
-            <SelectItem key={index} value={value}>
+            <SelectItem key={value} value={value}>
               {label}
             </SelectItem>
           )
         })}
+      </>
+    ),
+    placeholder: 'Alt Select',
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    children: (
+      <>
+        <SelectItem value={'1'}>First option</SelectItem>
+        <SelectItem value={'2'}>Second option</SelectItem>
+        <SelectItem value={'3'}>Third option</SelectItem>
+        <SelectItem value={'4'}>Fourth option</SelectItem>
+        <SelectItem value={'5'}>Fifth option</SelectItem>
+      </>
+    ),
+    disabled: true,
+    placeholder: 'Disabled',
+  },
+}
+
+export const WithGroups: Story = {
+  args: {
+    children: (
+      <>
         <SelectGroup>
           <SelectLabel>Group 1</SelectLabel>
           <SelectItem value={'1'}>1</SelectItem>
