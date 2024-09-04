@@ -18,7 +18,7 @@ export const Button = forwardRef<ElementRef<'button'>, Props>(
     return (
       <Comp
         {...props}
-        className={clsx(s.root, s[variant], fullWidth && s.fullWidth, className)}
+        className={clsx(s.root, s[variant], fullWidth && s.full, className)}
         ref={ref}
       />
     )

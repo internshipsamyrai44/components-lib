@@ -40,19 +40,24 @@ export const FullWidth: Story = {
 
     return (
       <div>
-        <Button {...args} asChild>
-          <a href={'https://google.com'} ref={anchorRef} rel={'noreferrer'} target={'_blank'}>
-            Go to google
-          </a>
-        </Button>
-        <Button {...args} onClick={() => alert('clicked nice button')} ref={buttonRef}>
-          Nice button
-        </Button>
-        <button onClick={() => buttonRef.current?.click()} type={'button'}>
-          Button
-        </button>
+        <Button {...args}>Go to google</Button>
       </div>
     )
+  },
+}
+
+export const Outline: Story = {
+  args: {
+    children: 'outlined',
+    variant: 'outlined',
+  },
+}
+
+export const Ghost: Story = {
+  args: {
+    children: 'ghost',
+    disabled: true,
+    variant: 'ghost',
   },
 }
 
@@ -60,5 +65,12 @@ export const AsLink: Story = {
   args: {
     ...Primary.args,
     children: 'Link',
+  },
+  render: args => {
+    return (
+      <Button {...args} asChild>
+        <a>Go to google</a>
+      </Button>
+    )
   },
 }
