@@ -7,17 +7,17 @@
 }
 
 .root.primary {
-  @apply text-white bg-blue-300;
+  @apply text-light-100 bg-accent-700;
 }
 
 .root.secondary {
-  @apply text-blue-400 bg-gray-400;
+  @apply text-accent-700 bg-light-500;
 }
 
 .root:focus-visible {
-  @apply outline outline-2 outline-blue-400;
+  @apply outline outline-2 outline-accent-100;
 }
 
-.root.fullwidth {
+.root.full-width {
   @apply justify-center w-1;
 }
