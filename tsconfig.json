@@ -35,7 +35,8 @@
     "declarationMap": true,
 
     // Importing .js files is not allowed, enable if needed.
-    "allowJs": false,
+    "allowJs": true,
+    "checkJs": false,
 
     // Fix the mis-match of behaviors between ES import and CommonJS require.
     "esModuleInterop": true,
@@ -69,6 +70,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": true
   },
-  "include": ["src"],
+  "include": ["src", "tailwind.config"],
   "exclude": ["./src/**/*.stories.*"]
 }
