@@ -1,7 +1,6 @@
+import { theme } from '@/lib/theme/theme'
 import { type ClassValue, clsx } from 'clsx'
 import { extendTailwindMerge } from 'tailwind-merge'
-
-import { theme } from './theme/theme'
 
 const twMerge = extendTailwindMerge({
   override: {
