@@ -13,6 +13,8 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
+    disabled: false,
+    errorText: '',
     label: 'Text-area',
     placeholder: 'Text-area',
   },
@@ -20,6 +22,7 @@ export const Default: Story = {
 
 export const Error: Story = {
   args: {
+    disabled: false,
     errorText: 'Error text',
     label: 'Text-area',
     placeholder: 'Text-area',
@@ -29,6 +32,7 @@ export const Error: Story = {
 export const Disabled: Story = {
   args: {
     disabled: true,
+    errorText: '',
     label: 'Text-area',
     placeholder: 'Text-area',
   },
