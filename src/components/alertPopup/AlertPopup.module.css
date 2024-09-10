@@ -4,13 +4,14 @@
 
 .container {
   @apply cursor-default
-	fixed
+	relative
+	mb-3.5
 	z-50
 	top-[30px]
 	left-1/2
 	flex
 	items-start
-	w-auto
+	w-max
 	h-auto
 	p-[10px]
 	rounded-[8px]
