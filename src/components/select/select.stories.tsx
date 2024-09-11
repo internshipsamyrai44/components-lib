@@ -5,26 +5,13 @@ import { Select, SelectGroup, SelectItem, SelectLabel } from './select'
 
 const meta = {
   component: Select,
+  tags: ['autodocs'],
   title: 'Components/Select',
 } satisfies Meta<typeof Select>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
-const options = [
-  {
-    label: 'Option 1',
-    value: '1',
-  },
-  {
-    label: 'Option 2',
-    value: '2',
-  },
-  {
-    label: 'Option 3',
-    value: '3',
-  },
-]
 
 export const Primary: Story = {
   args: {
@@ -41,7 +28,22 @@ export const Primary: Story = {
   },
 }
 
-export const Alt: Story = {
+const options = [
+  {
+    label: 'Option 1',
+    value: '1',
+  },
+  {
+    label: 'Option 2',
+    value: '2',
+  },
+  {
+    label: 'Option 3',
+    value: '3',
+  },
+]
+
+export const Secondary: Story = {
   args: {
     children: (
       <>
@@ -54,7 +56,7 @@ export const Alt: Story = {
         })}
       </>
     ),
-    placeholder: 'Alt Select',
+    placeholder: 'Secondary Select',
   },
 }
 
@@ -73,7 +75,6 @@ export const Disabled: Story = {
     placeholder: 'Disabled',
   },
 }
-
 export const WithGroups: Story = {
   args: {
     children: (

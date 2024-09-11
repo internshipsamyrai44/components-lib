@@ -34,11 +34,12 @@ const SelectTrigger = React.forwardRef<
 >(({ children, className, ...props }, ref) => (
   <SelectPrimitive.Trigger
     className={cn(
-      'group cursor-pointer flex items-center justify-between box-border w-full h-9 p-1.5 px-3 bg-inherit border border-dark-100 rounded-sm text-light-900 leading-6 [&>span]:line-clamp-1',
+      'group cursor-pointer flex items-center justify-between box-border w-full h-9 p-1.5 px-3 rounded-sm text-light-900 leading-6',
+      'bg-inherit border border-dark-100',
       'hover:text-light-100',
       'focus-visible:outline-none focus-visible:border-2 focus-visible:border-accent-500',
-      'data-[state=open]:text-light-100',
-      'data-[state=disabled]:text-dark-100 data-[state=disabled]:cursor-not-allowed',
+      'data-[state=open]:text-light-100 data-[state=open]:border-light-100 data-[state=open]:bg-dark-500',
+      'data-[disabled]:text-dark-100 data-[disabled]:pointer-events-none',
       className
     )}
     ref={ref}
@@ -60,9 +61,18 @@ const SelectContent = React.forwardRef<
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
       className={cn(
-        'relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
-        position === 'popper' &&
-          'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
+        'relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md',
+        'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',
+        'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
+        'data-[side=bottom]:slide-in-from-top-2',
+        'data-[side=left]:slide-in-from-right-2',
+        'data-[side=right]:slide-in-from-left-2',
+        'data-[side=top]:slide-in-from-bottom-2',
+        position === 'popper' && 'data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1',
+        'w-[var(--radix-select-trigger-width)]',
+        'max-h-[var(--radix-select-content-available-height)]',
+        'bg-dark-500',
+        'border border-light-100 rounded-sm',
         className
       )}
       position={position}
@@ -71,9 +81,8 @@ const SelectContent = React.forwardRef<
     >
       <SelectPrimitive.Viewport
         className={cn(
-          'p-1',
-          position === 'popper' &&
-            'h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]'
+          'min-w-[var(--radix-select-trigger-width)]',
+          position === 'popper' && 'h-[var(--radix-select-trigger-height)] w-full'
         )}
       >
         {children}
@@ -89,7 +98,10 @@ const SelectLabel = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
-    className={cn('py-1.5 pl-8 pr-2 text-sm font-semibold', className)}
+    className={cn(
+      'flex gap-3 items-center py-1.5 pl-8 pr-2 text-sm font-semibold text-light-900',
+      className
+    )}
     ref={ref}
     {...props}
   />
@@ -103,7 +115,10 @@ const SelectItem = React.forwardRef<
 >(({ children, className, ...props }, ref) => (
   <SelectPrimitive.Item
     className={cn(
-      'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2.5 pr-2 text-sm outline-none',
+      'text-light-100',
+      'hover:text-accent-500 hover:bg-dark-300',
+      'focus-visible:bg-accent-900 focus-visible:outline-none',
       className
     )}
     ref={ref}
