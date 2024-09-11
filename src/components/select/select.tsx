@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 import { ChevronDown } from '@/assets/icons/chevron-down'
 import { cn } from '@/lib/utils'
@@ -10,15 +10,20 @@ import * as SelectPrimitive from '@radix-ui/react-select'
 const Select = ({
   children,
   placeholder,
+  triggerIcon,
   triggerProps = {},
   ...props
 }: {
   placeholder?: string
+  triggerIcon?: ReactNode
   triggerProps?: Omit<ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>, 'children'>
 } & ComponentPropsWithoutRef<typeof SelectPrimitive.Root>) => (
   <SelectPrimitive.Root {...props}>
     <SelectTrigger {...triggerProps}>
-      <SelectValue placeholder={placeholder} />
+      <div className={'flex gap-3 items-center'}>
+        {triggerIcon && <>{triggerIcon}</>}
+        <SelectValue placeholder={placeholder} />
+      </div>
     </SelectTrigger>
     <SelectContent>{children}</SelectContent>
   </SelectPrimitive.Root>
@@ -98,10 +103,7 @@ const SelectLabel = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
-    className={cn(
-      'flex gap-3 items-center py-1.5 pl-8 pr-2 text-sm font-semibold text-light-900',
-      className
-    )}
+    className={cn(' py-1.5 pl-8 pr-2 text-sm font-semibold text-light-900', className)}
     ref={ref}
     {...props}
   />
