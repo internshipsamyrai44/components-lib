@@ -1,8 +1,7 @@
 import { SelectSeparator } from '@radix-ui/react-select'
 import { Meta, StoryObj } from '@storybook/react'
 
-import FlagRussia from '../../assets/icons/FlagRussia'
-import FlagUnitedKingdom from '../../assets/icons/FlagUnitedKingdom'
+import { FlagRussia, FlagUnitedKingdom } from '../../assets/icons'
 import { Select, SelectGroup, SelectItem, SelectLabel } from './select'
 
 const meta = {

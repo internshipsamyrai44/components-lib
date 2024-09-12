@@ -1,9 +1,7 @@
-'use client'
-
 import * as React from 'react'
 import { ComponentPropsWithoutRef, ReactNode } from 'react'
 
-import { ChevronDown } from '@/assets/icons/chevron-down'
+import { ChevronDown } from '@/assets/icons'
 import { cn } from '@/lib/utils'
 import * as SelectPrimitive from '@radix-ui/react-select'
 
