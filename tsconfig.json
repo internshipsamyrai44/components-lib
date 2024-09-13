@@ -70,6 +70,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": true
   },
-  "include": ["src", "tailwind.config"],
-  "exclude": ["./src/**/*.stories.*"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
