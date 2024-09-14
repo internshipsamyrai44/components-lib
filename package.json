@@ -29,10 +29,13 @@
     "./style.css": "./dist/style.css"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "1.1.1",
     "@radix-ui/react-select": "2.1.1",
     "@radix-ui/react-slot": "1.1.0",
     "clsx": "2.1.1",
+    "date-fns": "4.0.0-beta.1",
     "react": "18.3.1",
+    "react-day-picker": "9.0.9",
     "react-dom": "18.3.1",
     "tailwind-merge": "2.4.0"
   },
