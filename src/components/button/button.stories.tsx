@@ -5,6 +5,22 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Button } from './button'
 
 const meta = {
+  argTypes: {
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    fullWidth: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    variant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'outlined', 'ghost'],
+    },
+  },
   component: Button,
   title: 'Components/Button',
 } satisfies Meta<typeof Button>
@@ -56,7 +72,6 @@ export const Outline: Story = {
 export const Ghost: Story = {
   args: {
     children: 'ghost',
-    disabled: true,
     variant: 'ghost',
   },
 }
