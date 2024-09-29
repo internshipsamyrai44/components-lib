@@ -35,7 +35,8 @@
     "declarationMap": true,
 
     // Importing .js files is not allowed, enable if needed.
-    "allowJs": false,
+    "allowJs": true,
+    "checkJs": false,
 
     // Fix the mis-match of behaviors between ES import and CommonJS require.
     "esModuleInterop": true,
@@ -70,5 +71,5 @@
     "noUnusedParameters": true
   },
   "include": ["src"],
-  "exclude": ["./src/**/*.stories.*"]
+  "exclude": ["node_modules"]
 }
