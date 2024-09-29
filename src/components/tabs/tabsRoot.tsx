@@ -62,7 +62,7 @@ const TabsTrigger = React.forwardRef<
       'bg-transparent text-dark-100  py-1.5 px-6 border-b-4 border-b-dark-100 border-solid',
       'active:bg-accent-100 active:bg-opacity-15',
       'hover:bg-accent-900 hover:bg-opacity-25',
-      'focus:outline-2 focus:outline-accent-700 focus:outline focus:rounded-sm',
+      'focus-visible:outline-2 focus-visible:outline-accent-700 focus-visible:outline focus-visible:rounded-sm',
       'disabled:text-dark-300 disabled:border-b-dark-300',
       'data-[state=active]:text-accent-500 data-[state=active]:border-b-accent-500 data-[state=active]:disabled:text-accent-900 data-[state=active]:disabled:border-b-accent-900',
       className
