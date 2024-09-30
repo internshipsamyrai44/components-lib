@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.root {
+  @apply flex
+  gap-3.5
+  items-center;
+}
+
+.container {
+  @apply flex
+  text-regular_14;
+}
+
+.btn {
+  all: unset;
+
+  @apply cursor-pointer
+  flex
+  gap-3
+  items-center
+  justify-center
+  w-[24px]
+  h-[24px]
+  hover: bg-dark-500;
+}
+
+&:focus-visible {
+  @apply outline
+    outline-accent-700
+    outline-2
+    -outline-offset-2;
+}
+
+&.selected {
+  @apply text-dark-900
+    bg-light-100;
+}
+
+.select {
+  @apply flex
+    gap-2.5
+    items-center
+    justify-center;
+}
