@@ -1,26 +1,18 @@
-import { Ref, SVGProps } from 'react'
-
-export const PaginationArrowForward = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
-  <svg
-    fill={'none'}
-    height={'1em'}
-    ref={ref}
-    viewBox={'0 0 24 24'}
-    width={'1em'}
-    xmlns={'http://www.w3.org/2000/svg'}
-    {...props}
-  >
-    <g clipPath={'url(#arrow-ios-forward_svg__a)'}>
+import * as React from 'react'
+import { SVGProps } from 'react'
+export const PaginationArrowForward = (props: SVGProps<SVGSVGElement>) => (
+  <svg fill={'none'} height={16} width={16} xmlns={'http://www.w3.org/2000/svg'} {...props}>
+    <g clipPath={'url(#a)'}>
       <path
         d={
-          'M10 19a1 1 0 0 1-.77-1.64L13.71 12 9.39 6.63a1 1 0 0 1 .15-1.41 1 1 0 0 1 1.46.15l4.83 6a1 1 0 0 1 0 1.27l-5 6A1 1 0 0 1 10 19'
+          'M6.667 12.667a.667.667 0 0 1-.514-1.094L9.14 8 6.26 4.42a.667.667 0 0 1 .1-.94.667.667 0 0 1 .973.1l3.22 4a.666.666 0 0 1 0 .847l-3.333 4a.666.666 0 0 1-.553.24Z'
         }
-        fill={'currentColor'}
+        fill={'#fff'}
       />
     </g>
     <defs>
-      <clipPath id={'arrow-ios-forward_svg__a'}>
-        <path d={'M0 0h24v24H0z'} fill={'#fff'} />
+      <clipPath id={'a'}>
+        <path d={'M0 0h16v16H0z'} fill={'#fff'} />
       </clipPath>
     </defs>
   </svg>

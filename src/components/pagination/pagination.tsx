@@ -2,23 +2,11 @@ import React, { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react'
 
 import { PaginationArrowBack } from '@/assets/icons/paginationArrowBack'
 import { PaginationArrowForward } from '@/assets/icons/paginationArrowForward'
-import { clsx } from 'clsx'
+import { cn } from '@/lib/utils'
 
 import styles from './pagination.module.css'
 
-import { Typography } from '../typography'
 import { usePagination } from './usePagination'
-
-/**
- * Props for the Pagination component.
- * @typedef {Object} PaginationProps
- * @property {ReactNode} [children] - The child elements of the pagination component.
- * @property {number} currentPage - The current active page number.
- * @property {function(number): void} onChangePage - Callback function when the page changes.
- * @property {number} pageSize - The number of items per page.
- * @property {number} [siblingCount=1] - The number of sibling pages to show around the current page.
- * @property {number} totalCount - The total number of items.
- */
 
 type PaginationProps = {
   currentPage: number
@@ -27,13 +15,6 @@ type PaginationProps = {
   siblingCount?: number
   totalCount: number
 } & ComponentPropsWithoutRef<'div'>
-
-/**
- * A custom Pagination component.
- * Source: www.freecodecamp.org/news/*build-a-custom-pagination-component-in-react/
- * @param {PaginationProps} props - The props for the Pagination component.
- * @returns {JSX.Element} - The rendered Pagination component.
- */
 
 export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
   (
@@ -49,7 +30,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
     },
     ref
   ) => {
-    const classNames = { container: styles.container, root: clsx(styles.root, className) } as const
+    const classNames = { container: styles.container, root: cn(styles.root, className) } as const
     const { handleClickNextBtn, handleClickPrevBtn, handlePageChange, paginationRange } =
       usePagination({ currentPage, onChangePage, pageSize, siblingCount, totalCount })
 
@@ -58,7 +39,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
 
     const mainButtons = React.useMemo(
       () =>
-        paginationRange.map((pageLocal, i) => {
+        paginationRange.map((pageLocal: any, i: number) => {
           const isSelected = currentPage === pageLocal
 
           return (
@@ -67,9 +48,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
               key={i}
               onClick={() => handlePageChange(pageLocal as number)}
             >
-              <Typography as={'span'} variant={'text14'}>
-                {pageLocal}
-              </Typography>
+              <div className={cn('text-regular_14')}>{pageLocal}</div>
             </PaginationButton>
           )
         }),
@@ -77,15 +56,15 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
     )
 
     return (
-      <div className={clsx(classNames.root)} {...rest} ref={ref}>
-        <PaginationButton
-          aria-label={'Previous page'}
-          disabled={disabledPrevBtn}
-          onClick={() => handleClickPrevBtn()}
-        >
-          <PaginationArrowBack />
-        </PaginationButton>
-        <div className={clsx(classNames.container)}>
+      <div className={cn(classNames.root)} {...rest} ref={ref}>
+        <div className={cn(classNames.container)}>
+          <PaginationButton
+            aria-label={'Previous page'}
+            disabled={disabledPrevBtn}
+            onClick={() => handleClickPrevBtn()}
+          >
+            <PaginationArrowBack />
+          </PaginationButton>
           {mainButtons}
           <PaginationButton
             aria-label={'Next page'}
@@ -103,24 +82,10 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
   }
 )
 
-/**
- * Props for the PaginationButton component.
- * @typedef {Object} PaginationButtonProps
- * @property {boolean} [disabled] - Whether the button is disabled.
- * @property {boolean} [isSelected] - Whether the button is selected.
- * @property {function(): void} [onClick] - Callback function when the button is clicked.
- */
-
 type PaginationButtonProps = {
   isSelected?: boolean
   onClick?: () => void
 } & ComponentPropsWithoutRef<'button'>
-
-/**
- * A custom PaginationButton component.
- * @param {PaginationButtonProps} props - The props for the PaginationButton component.
- * @returns {JSX.Element} - The rendered PaginationButton component.
- */
 
 const PaginationButton = ({
   children,
@@ -130,33 +95,20 @@ const PaginationButton = ({
   ...rest
 }: PaginationButtonProps) => {
   const classNames = {
-    btn: clsx(styles.btn, isSelected && styles.selected, className),
+    btn: cn(styles.btn, isSelected && styles.selected, className),
   } as const
 
   return (
-    <button className={clsx(classNames.btn)} onClick={onClick} type={'button'} {...rest}>
+    <button className={cn(classNames.btn)} onClick={onClick} type={'button'} {...rest}>
       {children}
     </button>
   )
 }
 
-/**
- * Props for the SelectContainer component.
- * @typedef {Object} SelectContainerProps
- * @property {ReactNode} children - The child elements of the select container.
- * @property {string[]} content - The content to display before and after the children.
- */
-
 type SelectContainerProps = {
   children: ReactNode
   content: string[]
-} & ComponentPropsWithoutRef<'div'>
-
-/**
- * A custom SelectContainer component.
- * @param {SelectContainerProps} props - The props for the SelectContainer component.
- * @returns {JSX.Element} - The rendered SelectContainer component.
- */
+} & Omit<ComponentPropsWithoutRef<'div'>, 'content'>
 
 export const SelectContainer = ({
   children,
@@ -165,18 +117,14 @@ export const SelectContainer = ({
   ...rest
 }: SelectContainerProps) => {
   const classNames = {
-    select: clsx(styles.select, className),
+    select: cn(styles.select, className),
   }
 
   return (
     <div className={classNames.select} {...rest}>
-      <Typography as={'span'} variant={'text14'}>
-        {content[0] || ''}
-      </Typography>
+      <span className={cn('text-regular_14 text-light-100')}>{content[0] || ''}</span>
       <div>{children}</div>
-      <Typography as={'span'} variant={'text14'}>
-        {content[1] || ''}
-      </Typography>
+      <span className={cn('text-regular_14 text-light-100')}> {content[1] || ''}</span>
     </div>
   )
 }

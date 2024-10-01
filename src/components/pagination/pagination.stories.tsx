@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { ComponentProps, useState } from 'react'
-import React from 'react'
 
-import { Select, SelectItem } from '../select'
+import { Select, SelectItem } from '@/components'
+
 import { Pagination, SelectContainer } from './pagination'
 
 const meta = {
@@ -11,7 +11,7 @@ const meta = {
     currentPage: 1,
     onChangePage: () => {},
     pageSize: 1,
-    totalCount: 10,
+    totalCount: 1000,
   },
   component: Pagination,
 
@@ -78,8 +78,8 @@ export const PaginationWithSelect: Story = {
         pageSize={pageSize}
         totalCount={args.totalCount}
       >
-        <SelectContainer content={['Show', 'on page']}>
-          <Select onValueChange={handleOptionChange} pagination value={option}>
+        <SelectContainer content={['Показать', 'на странице']}>
+          <Select onValueChange={handleOptionChange} value={option}>
             {options.map(option => (
               <SelectItem key={option.id} value={option.value}>
                 {option.title}
