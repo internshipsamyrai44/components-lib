@@ -33,7 +33,8 @@ export const Button = forwardRef<ElementRef<'button'>, Props>(
           isOutlined &&
             'hover:border-accent-100 hover:text-accent-100 focus-visible:border-transparent focus-visible:text-accent-700 disabled:border-accent-900 disabled:text-accent-900',
           isGhost &&
-            'border-none text-accent-500 bg-transparent active:text-accent-700 hover:text-accent-100 disabled:text-accent-900 disabled:bg-transparent'
+            'border-none text-accent-500 bg-transparent active:text-accent-700 hover:text-accent-100 disabled:text-accent-900 disabled:bg-transparent',
+          className
         )}
         ref={ref}
       />
