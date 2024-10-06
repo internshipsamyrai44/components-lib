@@ -66,10 +66,11 @@ export function DatePicker({
               'active:border-dark-300 active:text-light-100',
 
               {
-                'text-danger-500 border-danger-500 hover:border-danger-500 hover:text-danger-500 active:border-danger-500 active:text-danger-500 focus-visible:text-danger-500':
-                  errorText,
+                'bg-dark-500': open,
                 'disabled:cursor-not-allowed disabled:text-light-900 disabled:border-dark-300':
                   props.disabled,
+                'text-danger-500 border-danger-500 hover:border-danger-500 hover:text-danger-500 active:border-danger-500 active:text-danger-500 focus-visible:text-danger-500':
+                  errorText,
               }
             )}
             disabled={props.disabled}
