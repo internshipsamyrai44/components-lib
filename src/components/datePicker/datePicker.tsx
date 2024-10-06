@@ -46,7 +46,6 @@ export function DatePicker({
   }
 
   const CalendarIcon = open ? CalendarClassic : CalendarOutline
-  const errorStyles = errorText ? 'outline-none ring-1 text-danger-500 ring-danger-500' : ''
 
   return (
     <div className={cn('grid', className)}>
@@ -59,11 +58,19 @@ export function DatePicker({
         <PopoverTrigger asChild>
           <Button
             className={cn(
-              'justify-between text-left text-regular_16',
+              'flex justify-between text-left text-regular_16 text-light-100 border-dark-300 px-3 py-1.5',
               range ? 'w-[262px]' : 'w-[158px]',
-              // 'focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-300',
-              'disabled:cursor-not-allowed disabled:text-light-900',
-              errorStyles
+
+              'hover:border-dark-300 hover:text-light-100 focus-visible:border-transparent focus-visible:text-light-100',
+
+              'active:border-dark-300 active:text-light-100',
+
+              {
+                'text-danger-500 border-danger-500 hover:border-danger-500 hover:text-danger-500 active:border-danger-500 active:text-danger-500 focus-visible:text-danger-500':
+                  errorText,
+                'disabled:cursor-not-allowed disabled:text-light-900 disabled:border-dark-300':
+                  props.disabled,
+              }
             )}
             disabled={props.disabled}
             id={'date'}
