@@ -1,11 +1,11 @@
-import { Meta, StoryObj } from '@storybook/react'
 import { Recaptcha } from '@/components/recaptcha/recaptcha'
 import { action } from '@storybook/addon-actions'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: Recaptcha,
-  title: 'Components/Recaptcha',
   tags: ['autodocs'],
+  title: 'Components/Recaptcha',
 } satisfies Meta<typeof Recaptcha>
 
 export default meta
@@ -13,20 +13,20 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Initial: Story = {
-  args: { variant: 'default', onClick: action('Button clicked') },
+  args: { onClick: action('Button clicked'), variant: 'default' },
 }
 export const Checked: Story = {
-  args: { variant: 'checked', onClick: action('Button clicked') },
+  args: { onClick: action('Button clicked'), variant: 'checked' },
 }
 
 export const Loading: Story = {
-  args: { variant: 'loading', onClick: action('Button clicked') },
+  args: { onClick: action('Button clicked'), variant: 'loading' },
 }
 
 export const Expired: Story = {
-  args: { variant: 'expired', onClick: action('Button clicked') },
+  args: { onClick: action('Button clicked'), variant: 'expired' },
 }
 
 export const WithError: Story = {
-  args: { variant: 'withError', onClick: action('Button clicked') },
+  args: { onClick: action('Button clicked'), variant: 'withError' },
 }
