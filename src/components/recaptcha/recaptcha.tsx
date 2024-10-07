@@ -1,5 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react'
 import Recaptchalogo1 from '@/assets/icons/Recaptchalogo1'
+import CheckmarkOutline from '@/assets/icons/CheckmarkOutline'
+import { cn } from '@/lib/utils'
 
 type policyLinks = [string, string]
 
@@ -28,19 +30,43 @@ export const Recaptcha = (props: RecaptchaProps) => {
   const [Privacy, Terms] = policyLinks
 
   return (
-    <div {...rest} className={variant === 'withError' ? '' : ''}>
-      <div className={''}>
-        {/* тут чек и крутилка*/}
-        <div className={''}>{label}</div>
-        <div className={''}>
-          <Recaptchalogo1 className={''} />
+    <div {...rest} className={cn({ 'with-error': variant === 'withError' })}>
+      <div className="container">
+        <RecaptchaForm onClick={onClick} variant={variant} />
+        <div className="label">{label}</div>
+        <div className="footer">
+          <Recaptchalogo1 className="logo" />
           <a href={Privacy}>Privacy</a>
           <span> - </span>
           <a href={Terms}>Terms</a>
         </div>
-        {variant === 'expired' && <div className={''}>{expiredMessage}</div>}
+        {variant === 'expired' && <div className="expired">{expiredMessage}</div>}
       </div>
-      {variant === 'withError' && <div className={''}>{errorMessage}</div>}
+      {variant === 'withError' && <div className="error">{errorMessage}</div>}
     </div>
   )
+}
+
+type RecaptchaFormProps = {
+  variant: RecaptchaProps['variant']
+  onClick?: () => void
+}
+
+const RecaptchaForm = ({ variant, onClick }: RecaptchaFormProps) => {
+  switch (variant) {
+    case 'default':
+    case 'withError':
+    case 'expired':
+      return <button className="checkBox" onClick={onClick}></button>
+    case 'checked':
+      return (
+        <div className="checked">
+          <CheckmarkOutline />
+        </div>
+      )
+    case 'loading':
+      return <div className="loader"></div>
+    default:
+      return null
+  }
 }
