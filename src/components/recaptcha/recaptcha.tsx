@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef } from 'react'
+import Recaptchalogo1 from '@/assets/icons/Recaptchalogo1'
 
 type policyLinks = [string, string]
 
@@ -24,15 +25,18 @@ export const Recaptcha = (props: RecaptchaProps) => {
     onClick,
     ...rest
   } = props
+  const [Privacy, Terms] = policyLinks
 
   return (
     <div {...rest} className={variant === 'withError' ? '' : ''}>
       <div className={''}>
+        {/* тут чек и крутилка*/}
         <div className={''}>{label}</div>
         <div className={''}>
-          <a href={policyLinks[0]}>Privacy</a>
+          <Recaptchalogo1 className={''} />
+          <a href={Privacy}>Privacy</a>
           <span> - </span>
-          <a href={policyLinks[1]}>Terms</a>
+          <a href={Terms}>Terms</a>
         </div>
         {variant === 'expired' && <div className={''}>{expiredMessage}</div>}
       </div>
