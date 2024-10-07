@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.root {
+  @apply flex
+	items-center
+	justify-center;
+}
+
+.container {
+  @apply flex
+	items-center
+	justify-center
+	w-auto
+	text-regular_14;
+}
+
+.btn {
+  all: unset;
+
+  @apply cursor-pointer
+	flex
+	gap-3
+	items-center
+	justify-center
+	w-[24px]
+	h-[24px]
+	text-light-100
+	mx-1.5
+	hover:bg-dark-500
+	focus-visible:outline
+	focus-visible:outline-accent-700
+	focus-visible:outline-2
+	focus-visible:-outline-offset-2;
+}
+
+.selected {
+  @apply text-dark-900
+	bg-light-100
+	hover:bg-light-100;
+}
+
+.select {
+  @apply flex
+	gap-2.5
+	items-center
+	justify-center;
+}
