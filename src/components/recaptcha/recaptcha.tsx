@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef } from 'react'
 
 import CheckmarkOutline from '@/assets/icons/CheckmarkOutline'
 import Recaptchalogo1 from '@/assets/icons/Recaptchalogo1'
+import { cn } from '@/lib/utils'
 
 type policyLinks = [string, string]
 
@@ -30,15 +31,30 @@ export const Recaptcha = (props: RecaptchaProps) => {
   const [Privacy, Terms] = policyLinks
 
   return (
-    <div {...rest} className={variant === 'withError' ? 'inline-flex flex-col gap-3' : ''}>
-      <div className={'container'}>
+    <div
+      {...rest}
+      className={cn(
+        variant === 'withError'
+          ? 'inline-flex flex-col gap-3 p-2 px-1.5 pb-3.25 border border-danger-500'
+          : ''
+      )}
+    >
+      <div
+        className={
+          'relative flex items-center justify-between w-[300px] h-[79px] p-3 px-5 font-medium text-medium_14 bg-dark-500 border border-dark-300 rounded-sm'
+        }
+      >
         <RecaptchaForm onClick={onClick} variant={variant} />
-        <div className={'label'}>{label}</div>
+        <div className={'text-light-100 pl-8'}>{label}</div>
         <div className={'footer'}>
           <Recaptchalogo1 className={'logo'} />
-          <a href={Privacy}>Privacy</a>
+          <a className={'hover:underline'} href={Privacy}>
+            Privacy
+          </a>
           <span> - </span>
-          <a href={Terms}>Terms</a>
+          <a className={'hover:underline'} href={Terms}>
+            Terms
+          </a>
         </div>
         {variant === 'expired' && <div className={'expired'}>{expiredMessage}</div>}
       </div>
