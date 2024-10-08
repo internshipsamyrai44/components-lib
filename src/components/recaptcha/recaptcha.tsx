@@ -31,7 +31,7 @@ export const Recaptcha = (props: RecaptchaProps) => {
   const [Privacy, Terms] = policyLinks
 
   return (
-    <div {...rest} className={cn({ 'with-error': variant === 'withError' })}>
+    <div {...rest} className={variant === 'withError' ? 'inline-flex flex-col gap-3' : ''}>
       <div className={'container'}>
         <RecaptchaForm onClick={onClick} variant={variant} />
         <div className={'label'}>{label}</div>
