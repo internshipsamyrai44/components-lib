@@ -2,7 +2,6 @@ import { ComponentPropsWithoutRef } from 'react'
 
 import CheckmarkOutline from '@/assets/icons/CheckmarkOutline'
 import Recaptchalogo1 from '@/assets/icons/Recaptchalogo1'
-import { cn } from '@/lib/utils'
 
 type policyLinks = [string, string]
 
