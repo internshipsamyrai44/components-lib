@@ -1,16 +1,34 @@
 import { SelectSeparator } from '@radix-ui/react-select'
 import { Meta, StoryObj } from '@storybook/react'
 
+import { FlagRussia, FlagUnitedKingdom } from '../../assets/icons'
 import { Select, SelectGroup, SelectItem, SelectLabel } from './select'
 
 const meta = {
   component: Select,
+  tags: ['autodocs'],
   title: 'Components/Select',
 } satisfies Meta<typeof Select>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Primary: Story = {
+  args: {
+    children: (
+      <>
+        <SelectItem value={'1'}>First option</SelectItem>
+        <SelectItem value={'2'}>Second option</SelectItem>
+        <SelectItem value={'3'}>Third option</SelectItem>
+        <SelectItem value={'4'}>Fourth option</SelectItem>
+        <SelectItem value={'5'}>Fifth option</SelectItem>
+      </>
+    ),
+    placeholder: 'Primary Select',
+  },
+}
+
 const options = [
   {
     label: 'Option 1',
@@ -26,17 +44,42 @@ const options = [
   },
 ]
 
-export const Primary: Story = {
+export const Secondary: Story = {
   args: {
     children: (
       <>
-        {options.map(({ label, value }, index) => {
+        {options.map(({ label, value }) => {
           return (
-            <SelectItem key={index} value={value}>
+            <SelectItem key={value} value={value}>
               {label}
             </SelectItem>
           )
         })}
+      </>
+    ),
+    placeholder: 'Secondary Select',
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    children: (
+      <>
+        <SelectItem value={'1'}>First option</SelectItem>
+        <SelectItem value={'2'}>Second option</SelectItem>
+        <SelectItem value={'3'}>Third option</SelectItem>
+        <SelectItem value={'4'}>Fourth option</SelectItem>
+        <SelectItem value={'5'}>Fifth option</SelectItem>
+      </>
+    ),
+    disabled: true,
+    placeholder: 'Disabled',
+  },
+}
+export const WithGroups: Story = {
+  args: {
+    children: (
+      <>
         <SelectGroup>
           <SelectLabel>Group 1</SelectLabel>
           <SelectItem value={'1'}>1</SelectItem>
@@ -53,5 +96,27 @@ export const Primary: Story = {
       </>
     ),
     placeholder: 'Select a theme',
+  },
+}
+export const WithIcon: Story = {
+  args: {
+    children: (
+      <>
+        <SelectItem value={'en'}>
+          <div style={{ alignItems: 'center', display: 'flex', gap: 12 }}>
+            <FlagUnitedKingdom />
+            <span>English</span>
+          </div>
+        </SelectItem>
+        <SelectItem value={'ru'}>
+          <div style={{ alignItems: 'center', display: 'flex', gap: 12 }}>
+            <FlagRussia />
+            <span>Russian</span>
+          </div>
+        </SelectItem>
+      </>
+    ),
+    defaultValue: 'en',
+    placeholder: 'WithIcon',
   },
 }
