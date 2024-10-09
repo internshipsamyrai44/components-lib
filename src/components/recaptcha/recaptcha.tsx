@@ -86,7 +86,7 @@ const RecaptchaForm = ({ onClick, variant }: RecaptchaFormProps) => {
         // eslint-disable-next-line react/button-has-type
         <button
           className={cn(
-            'cursor-pointer absolute top-1/2 left-[20px] -translate-y-1/2 w-[20px] h-[20px] bg-light-100 border border-light-900'
+            'cursor-pointer absolute top-1/2 left-[22px] -translate-y-1/2 w-[20px] h-[20px] bg-light-100 border border-light-900'
           )}
           onClick={onClick}
         />
@@ -94,9 +94,9 @@ const RecaptchaForm = ({ onClick, variant }: RecaptchaFormProps) => {
     case 'checked':
       return (
         <div
-          className={cn(
-            ' absolute top-1/2 left-[18px] -translate-y-1/2 inline-block m-0 text-[31px] text-success-700'
-          )}
+          className={
+            ' absolute top-1/2 left-[18px] -translate-y-1/2 inline-block text-[31px] text-success-700'
+          }
         >
           <CheckmarkOutline />
         </div>
@@ -105,7 +105,7 @@ const RecaptchaForm = ({ onClick, variant }: RecaptchaFormProps) => {
       return (
         <div
           className={
-            'absolute top-1/3 left-[18px]  inline-block box-border w-[25px] h-[25px] mr-[6px] border-t-[3px] border-t-accent-500 border-r-[3px] border-r-transparent border-l-[3px] border-l-transparent rounded-full animate-spin'
+            'absolute top-1/3 left-[18px] inline-block box-border w-[25px] h-[25px] mr-[6px] border-t-[3px] border-t-accent-500 border-r-[3px] border-r-transparent border-l-[3px] border-l-transparent rounded-full animate-spin'
           }
         ></div>
       )

@@ -1,22 +1,31 @@
-import type { SVGProps } from 'react'
-import { Ref, forwardRef, memo } from 'react'
+import { Ref, SVGProps, forwardRef, memo } from 'react'
 
 const SvgCheckmarkOutline = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
-    width="1em"
-    height="1em"
-    viewBox="0 0 25 19"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+    fill={'none'}
+    height={'1em'}
     ref={ref}
+    viewBox={'0 0 24 24'}
+    width={'1em'}
+    xmlns={'http://www.w3.org/2000/svg'}
     {...props}
   >
-    <path
-      d="M5.85999 13C5.72288 12.9996 5.58732 12.9709 5.46173 12.9159C5.33615 12.8608 5.22323 12.7805 5.12999 12.68L0.269994 7.51C0.088321 7.31639 -0.00900084 7.05855 -0.0005617 6.79318C0.00787744 6.52782 0.121386 6.27668 0.314994 6.095C0.508602 5.91333 0.76645 5.81601 1.03181 5.82445C1.29718 5.83288 1.54832 5.94639 1.72999 6.14L5.84999 10.53L14.26 1.33C14.3453 1.22372 14.4515 1.13602 14.572 1.07227C14.6925 1.00851 14.8247 0.970066 14.9606 0.959281C15.0965 0.948497 15.2331 0.965604 15.3621 1.00955C15.4912 1.0535 15.6098 1.12336 15.7109 1.21485C15.8119 1.30633 15.8932 1.41751 15.9497 1.54154C16.0062 1.66558 16.0368 1.79986 16.0395 1.93614C16.0422 2.07242 16.0171 2.20781 15.9656 2.33401C15.9141 2.46021 15.8373 2.57455 15.74 2.67L6.59999 12.67C6.50764 12.7724 6.39511 12.8545 6.26948 12.9113C6.14386 12.9681 6.00785 12.9983 5.86999 13H5.85999Z"
-      fill="currentcolor"
-    />
+    <g clipPath={'url(#checkmark-outline_svg__a)'}>
+      <path
+        d={
+          'M9.86 18a1 1 0 0 1-.73-.32l-4.86-5.17a1.001 1.001 0 0 1 1.46-1.37l4.12 4.39 8.41-9.2a1 1 0 1 1 1.48 1.34l-9.14 10a1 1 0 0 1-.73.33z'
+        }
+        fill={'currentcolor'}
+      />
+    </g>
+    <defs>
+      <clipPath id={'checkmark-outline_svg__a'}>
+        <path d={'M0 0h24v24H0z'} fill={'#fff'} />
+      </clipPath>
+    </defs>
   </svg>
 )
 const ForwardRef = forwardRef(SvgCheckmarkOutline)
 const Memo = memo(ForwardRef)
+
 export default Memo
