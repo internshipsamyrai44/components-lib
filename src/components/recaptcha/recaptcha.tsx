@@ -34,9 +34,8 @@ export const Recaptcha = (props: RecaptchaProps) => {
     <div
       {...rest}
       className={cn(
-        variant === 'withError'
-          ? 'inline-flex flex-col gap-3 p-2 px-1.5 pb-3.25 border border-danger-500'
-          : ''
+        variant === 'withError' &&
+          'inline-flex flex-col gap-3 p-2 px-1.5 pb-3.25 border border-danger-500'
       )}
     >
       <div
@@ -46,28 +45,28 @@ export const Recaptcha = (props: RecaptchaProps) => {
       >
         <RecaptchaForm onClick={onClick} variant={variant} />
         <div className={'text-light-100 pl-8'}>{label}</div>
-        <div className={'w-[44px] text-[5px] text-center'}>
+        <div className={'w-[44px] text-[5px] text-center '}>
           <Recaptchalogo1 className={'w-[44px] h-[44px]'} />
-          <a className={'hover:underline'} href={Privacy}>
+          <a className={cn('text-light-100 hover:underline')} href={Privacy}>
             Privacy
           </a>
-          <span> - </span>
-          <a className={'hover:underline'} href={Terms}>
+          <span className={'text-light-100'}> - </span>
+          <a className={'text-light-100 hover:underline'} href={Terms}>
             Terms
           </a>
         </div>
         {variant === 'expired' && (
-          <div className={'text-[10px] text-red-500'}>{expiredMessage}</div>
+          <div
+            className={
+              'absolute top-[2px] left-[20px] w-[185px] text-[10px] font-normal leading-tight text-danger-500'
+            }
+          >
+            {expiredMessage}
+          </div>
         )}
       </div>
       {variant === 'withError' && (
-        <div
-          className={
-            'absolute top-[2px] left-[20px] w-[185px] text-[10px] font-normal leading-tight text-red-500'
-          }
-        >
-          {errorMessage}
-        </div>
+        <div className={'text-[10px] text-danger-500'}>{errorMessage}</div>
       )}
     </div>
   )
@@ -87,16 +86,16 @@ const RecaptchaForm = ({ onClick, variant }: RecaptchaFormProps) => {
         // eslint-disable-next-line react/button-has-type
         <button
           className={cn(
-            'btnCheck cursor-pointer absolute top-1/2 left-[20px] -translate-y-1/2 w-[20px] h-[20px] bg-[var(--color-light-100)] border border-[#b7b7b7] transition-colors duration-200 hover:bg-[var(--color-light-700)] active:bg-[var(--color-light-900)]'
+            'cursor-pointer absolute top-1/2 left-[20px] -translate-y-1/2 w-[20px] h-[20px] bg-light-100 border border-light-900'
           )}
           onClick={onClick}
-        ></button>
+        />
       )
     case 'checked':
       return (
         <div
           className={cn(
-            'absolute top-1/2 left-[15px] -translate-y-1/2 inline-block m-0 text-[31px] font-bold text-[#19983b]'
+            ' absolute top-1/2 left-[18px] -translate-y-1/2 inline-block m-0 text-[31px] text-success-700'
           )}
         >
           <CheckmarkOutline />
@@ -106,7 +105,7 @@ const RecaptchaForm = ({ onClick, variant }: RecaptchaFormProps) => {
       return (
         <div
           className={
-            'absolute top-1/2 left-[18px] inline-block box-border w-[25px] h-[25px] mr-[6px] border-t-[3px] border-t-[#4d8df4] border-r-[3px] border-r-transparent border-l-[3px] border-l-transparent rounded-full animate-spin'
+            'absolute top-1/3 left-[18px]  inline-block box-border w-[25px] h-[25px] mr-[6px] border-t-[3px] border-t-accent-500 border-r-[3px] border-r-transparent border-l-[3px] border-l-transparent rounded-full animate-spin'
           }
         ></div>
       )
