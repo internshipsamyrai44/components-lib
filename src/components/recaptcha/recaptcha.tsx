@@ -47,13 +47,15 @@ export const Recaptcha = (props: RecaptchaProps) => {
         <div className={'text-light-100 pl-8'}>{label}</div>
         <div className={'w-[44px] text-[5px] text-center '}>
           <Recaptchalogo1 className={'w-[44px] h-[44px]'} />
-          <a className={cn('text-light-100 hover:underline')} href={Privacy}>
-            Privacy
-          </a>
-          <span className={'text-light-100'}> - </span>
-          <a className={'text-light-100 hover:underline'} href={Terms}>
-            Terms
-          </a>
+          <div className={'leading-normal'}>
+            <a className={'text-light-100 hover:underline'} href={Privacy}>
+              Privacy
+            </a>
+            <span className={'text-light-100'}> - </span>
+            <a className={'text-light-100 hover:underline'} href={Terms}>
+              Terms
+            </a>
+          </div>
         </div>
         {variant === 'expired' && (
           <div
@@ -83,12 +85,12 @@ const RecaptchaForm = ({ onClick, variant }: RecaptchaFormProps) => {
     case 'withError':
     case 'expired':
       return (
-        // eslint-disable-next-line react/button-has-type
         <button
           className={cn(
             'cursor-pointer absolute top-1/2 left-[22px] -translate-y-1/2 w-[20px] h-[20px] bg-light-100 border border-light-900'
           )}
           onClick={onClick}
+          type={'button'}
         />
       )
     case 'checked':
