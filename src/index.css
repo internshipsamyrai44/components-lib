@@ -1,5 +1,8 @@
 @import 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap';
 
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap';
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
