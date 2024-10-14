@@ -40,11 +40,11 @@ export const Recaptcha = (props: RecaptchaProps) => {
     >
       <div
         className={
-          'relative flex items-center justify-between w-[300px] h-[79px] p-3 px-5 font-medium text-medium_14 bg-dark-500 border border-dark-300 rounded-sm'
+          'relative flex items-center justify-between w-[300px] h-[79px] p-3 px-5 bg-dark-500 border border-dark-300 rounded-sm'
         }
       >
         <RecaptchaForm onClick={onClick} variant={variant} />
-        <div className={'text-light-100 pl-8'}>{label}</div>
+        <div className={'text-light-100 pl-8 text-roboto_12'}>{label}</div>
         <div className={'w-[44px] text-[5px] text-center '}>
           <Recaptchalogo1 className={'w-[44px] h-[44px]'} />
           <div className={'leading-normal'}>
@@ -60,7 +60,7 @@ export const Recaptcha = (props: RecaptchaProps) => {
         {variant === 'expired' && (
           <div
             className={
-              'absolute top-[2px] left-[20px] w-[185px] text-[10px] font-normal leading-tight text-danger-500'
+              'absolute top-[2px] left-[18px] w-[175px] text-roboto_10 leading-tight text-danger-500'
             }
           >
             {expiredMessage}
@@ -68,7 +68,7 @@ export const Recaptcha = (props: RecaptchaProps) => {
         )}
       </div>
       {variant === 'withError' && (
-        <div className={'text-[10px] text-danger-500'}>{errorMessage}</div>
+        <div className={'text-roboto_10 text-danger-500'}>{errorMessage}</div>
       )}
     </div>
   )
