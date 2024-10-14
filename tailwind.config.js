@@ -18,7 +18,11 @@ export default {
     colors: {
       ...theme.colors,
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        ...theme.fontFamily,
+      },
+    },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
     },
