@@ -20,6 +20,14 @@ export const Default: Story = {
   },
 }
 
+export const NoLabel: Story = {
+  args: {
+    disabled: false,
+    errorText: '',
+    placeholder: 'Text-area',
+  },
+}
+
 export const Error: Story = {
   args: {
     disabled: false,
