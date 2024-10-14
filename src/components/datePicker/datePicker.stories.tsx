@@ -32,6 +32,10 @@ export const Disabled: Story = {
   },
 }
 
+export const NoLabel: Story = {
+  args: {},
+}
+
 export const DateRange: Story = {
   args: {
     label: 'Date',

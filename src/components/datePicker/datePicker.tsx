@@ -50,18 +50,20 @@ export function DatePicker({
   return (
     <div className={cn('grid', className)}>
       <Popover onOpenChange={setOpen}>
-        <label
-          className={cn('text-regular_14 text-light-900', { 'text-dark-100': props.disabled })}
-        >
-          {label || (range ? 'Date Range' : 'Date')}
-        </label>
+        {label && (
+          <label
+            className={cn('text-regular_14 text-light-900', { 'text-dark-100': props.disabled })}
+          >
+            {label}
+          </label>
+        )}
         <PopoverTrigger asChild>
           <Button
             className={cn(
-              'flex justify-between text-left text-regular_16 text-light-100 border-dark-300 px-3 py-1.5',
+              'group flex justify-between text-left text-regular_16 text-light-100 border-dark-300 px-3 py-1.5',
               range ? 'w-[262px]' : 'w-[158px]',
 
-              'hover:border-dark-300 hover:text-light-100 focus-visible:border-transparent focus-visible:text-light-100',
+              'hover:border-dark-100 hover:text-light-100  focus-visible:border-transparent focus-visible:text-light-100',
 
               'active:border-dark-300 active:text-light-100',
 
@@ -69,7 +71,7 @@ export function DatePicker({
                 'bg-dark-500': open,
                 'disabled:cursor-not-allowed disabled:text-light-900 disabled:border-dark-300':
                   props.disabled,
-                'text-danger-500 border-danger-500 hover:border-danger-500 hover:text-danger-500 active:border-danger-500 active:text-danger-500 focus-visible:text-danger-500':
+                'text-danger-500 border-danger-500 active:border-danger-500 active:text-danger-500 focus-visible:text-danger-500 hover:fill-light-100':
                   errorText,
               }
             )}
@@ -78,7 +80,11 @@ export function DatePicker({
             variant={'outlined'}
           >
             {popoverText}
-            <CalendarIcon className={cn('fill-light-100', { 'fill-danger-500': errorText })} />
+            <CalendarIcon
+              className={cn('fill-light-100 group-hover:fill-light-100', {
+                'fill-danger-500': errorText,
+              })}
+            />
           </Button>
         </PopoverTrigger>
         <span className={'text-regular_14 text-danger-500 h-6'}>{errorText ? errorText : ''}</span>
