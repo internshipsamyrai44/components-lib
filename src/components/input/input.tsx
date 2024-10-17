@@ -1,9 +1,7 @@
 import * as React from 'react'
 import { ChangeEvent, KeyboardEvent, useState } from 'react'
 
-import { Eye } from '@/assets/icons/eye'
-import { EyeOff } from '@/assets/icons/eyeOff'
-import { Search } from '@/assets/icons/search'
+import { Eye, EyeOff, Search } from '@/assets/icons'
 import { cn } from '@/lib/utils'
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -114,9 +112,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             </button>
           )}
         </div>
-        {errorMessage && !isFocused && (
-          <span className={'text-regular_14 text-danger-500'}>{errorMessage}</span>
-        )}
+        <div
+          className={
+            'text-regular_14 text-danger-500 error-message min-h-6 overflow-hidden whitespace-nowrap text-ellipsis'
+          }
+        >
+          {errorMessage && !isFocused ? errorMessage : ''}
+        </div>
+        )
       </div>
     )
   }
