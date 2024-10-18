@@ -13,7 +13,8 @@
 	items-center
 	justify-center
 	w-auto
-	text-regular_14;
+	text-regular_14
+	flex-wrap
 }
 
 .btn {
