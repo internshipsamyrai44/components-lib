@@ -3,8 +3,13 @@ import { AlertPopup } from '@/components/alertPopup/AlertPopup'
 import { Tabs } from '@/components/tabs/tabsRoot'
 
 import './index.css'
+import { Pagination } from '@/components/pagination/pagination'
 
 export function App() {
+  const changePage = () => {
+    console.log('yo')
+  }
+
   return (
     <div className={'flex-auto flex-col align-middle wid bg-dark-500'}>
       Hello
@@ -19,6 +24,7 @@ export function App() {
           { title: 'Tab 5', value: 'tab5' },
         ]}
       />
+      <Pagination currentPage={1} onChangePage={changePage} pageSize={1} totalCount={10} />
     </div>
   )
 }
