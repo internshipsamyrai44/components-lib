@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-import cross from '@/assets/icons/cross-white.svg'
+import { CrossWhite } from '@/assets'
 import { cn } from '@/lib/utils'
 
 import style from './AlertPopup.module.css'
@@ -44,7 +44,7 @@ export const AlertPopup = (props: PropsType): JSX.Element => {
     open && (
       <div className={cn(style.container, alertType === 'success' ? style.success : style.error)}>
         <p className={style.message}>{alertMessage}</p>
-        <img alt={'cross'} className={style.cross} onClick={handleAlertPopupClose} src={cross} />
+        <CrossWhite className={style.cross} onClick={handleAlertPopupClose} />
       </div>
     ),
     document.querySelector('body') as HTMLElement
