@@ -1,9 +1,9 @@
 import { Button } from '@/components'
 import { AlertPopup } from '@/components/alertPopup/AlertPopup'
+import { Pagination } from '@/components/pagination/pagination'
 import { Tabs } from '@/components/tabs/tabsRoot'
 
 import './index.css'
-import { Pagination } from '@/components/pagination/pagination'
 
 export function App() {
   const changePage = () => {
