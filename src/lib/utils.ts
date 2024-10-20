@@ -5,8 +5,7 @@ import { extendTailwindMerge } from 'tailwind-merge'
 const twMerge = extendTailwindMerge({
   override: {
     classGroups: {
-      'font-size': [...Object.keys(theme.fontSize).map(key => key)],
-      'text-color': [...Object.keys(theme.colors).map(key => key)],
+      'font-size': [{ text: [...Object.keys(theme.fontSize).map(key => key)] }],
     },
   },
 })
