@@ -19,8 +19,8 @@ type CommonProps = {
 } & ComponentPropsWithoutRef<typeof TabsRoot>
 
 export const Tabs = React.forwardRef<React.ElementRef<typeof TabsRoot>, CommonProps>(
-  ({ children, className, fullWidth, tabs, ...rest }: CommonProps) => (
-    <TabsRoot {...rest}>
+  ({ children, className, fullWidth, tabs, ...rest }: CommonProps, ref) => (
+    <TabsRoot {...rest} ref={ref}>
       <TabsList className={cn(fullWidth && 'flex')}>
         {tabs.map(tab => (
           <TabsTrigger
