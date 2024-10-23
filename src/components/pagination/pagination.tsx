@@ -39,7 +39,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
 
     const mainButtons = React.useMemo(
       () =>
-        paginationRange.map((pageLocal: any, i: number) => {
+        paginationRange.map((pageLocal: number, i: number) => {
           const isSelected = currentPage === pageLocal
 
           return (
