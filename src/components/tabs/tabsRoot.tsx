@@ -57,7 +57,7 @@ const TabsTrigger = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Trigger
     className={cn(
-      'bg-transparent text-dark-100  py-1.5 px-6 border-b-2 border-b-dark-100 border-solid',
+      'bg-transparent text-dark-100  py-1.5 px-6 border-b-2 border-b-dark-100 border-solid text-h3',
       'active:bg-accent-100 active:bg-opacity-15',
       'hover:bg-accent-900 hover:bg-opacity-25',
       'focus-visible:outline-2 focus-visible:outline-accent-700 focus-visible:outline focus-visible:rounded-sm',
