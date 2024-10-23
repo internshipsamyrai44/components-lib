@@ -22,6 +22,7 @@ export const theme = {
       700: '#0D0D0D',
       900: '#000000',
     },
+    inherit: 'inherit',
     light: {
       100: '#FFFFFF',
       300: '#F7FBFF',
@@ -44,6 +45,9 @@ export const theme = {
       700: '#996600',
       900: '#664400',
     },
+  },
+  fontFamily: {
+    roboto: ['Roboto', 'sans-serif'],
   },
   fontSize: {
     bold_14: [
@@ -107,6 +111,27 @@ export const theme = {
       {
         fontWeight: '400',
         lineHeight: '1.5rem',
+      },
+    ],
+    roboto_6: [
+      6,
+      {
+        fontWeight: '500',
+        lineHeight: '7px',
+      },
+    ],
+    roboto_10: [
+      10,
+      {
+        fontWeight: '400',
+        lineHeight: '12px',
+      },
+    ],
+    roboto_12: [
+      12,
+      {
+        fontWeight: '500',
+        lineHeight: '14px',
       },
     ],
     'semi-bold_small': [
