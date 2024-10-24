@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { CrossWhite } from '@/assets'
@@ -13,7 +13,7 @@ type PropsType = {
   message: string
 }
 
-export const AlertPopup = (props: PropsType): JSX.Element => {
+export const AlertPopup = (props: PropsType): React.ReactElement => {
   const { alertType, callback, duration = 5000, message } = props
   const [open, setOpen] = useState(true)
   const [alertMessage, setAlertMessage] = useState<null | string>(message)
@@ -27,7 +27,7 @@ export const AlertPopup = (props: PropsType): JSX.Element => {
   }
 
   useEffect(() => {
-    let timer: any
+    let timer: ReturnType<typeof setTimeout>
 
     if (message) {
       setOpen(true)
@@ -42,8 +42,15 @@ export const AlertPopup = (props: PropsType): JSX.Element => {
 
   return createPortal(
     open && (
-      <div className={cn(style.container, alertType === 'success' ? style.success : style.error)}>
-        <p className={style.message}>{alertMessage}</p>
+      <div
+        aria-live={'assertive'}
+        className={cn(style.container, alertType === 'success' ? style.success : style.error)}
+        role={'alert'}
+      >
+        <p className={style.message}>
+          {alertType === 'error' && <span>Error! </span>}
+          {alertMessage}
+        </p>
         <CrossWhite className={style.cross} onClick={handleAlertPopupClose} />
       </div>
     ),
