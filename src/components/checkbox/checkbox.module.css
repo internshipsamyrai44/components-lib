@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    @apply flex
+    flex-row
+    items-center
+}
+
+.wrapper {
+    @apply flex
+    items-center
+    justify-center
+    h-[36px]
+    w-[36px]
+    bg-transparent
+    rounded-[50%]
+    mr-0.5
+    hover:bg-dark-300
+    active:bg-dark-100
+    focus-within:bg-dark-300;
+}
+
+.disabledwrapper {
+    @apply flex
+    items-center
+    justify-center
+    h-[36px]
+    w-[36px]
+    bg-transparent
+    rounded-[50%]
+    mr-0.5
+}
+
+.root {
+    @apply h-5
+    w-5
+    m-[10px]
+    flex
+    shrink-0
+    rounded-[3px]
+    border-2
+    border-light-100
+    bg-transparent
+    focus-visible:outline-none
+    disabled:border-light-900
+    data-[state=checked]:text-light-100
+    data-[state=checked]:bg-light-100
+    data-[state=checked]:disabled:bg-light-900;
+}
+
+.indicator {
+    @apply flex
+    items-center
+    justify-center
+    text-current;
+}
+
+.check {
+    @apply h-4
+    w-4
+    p-0
+    rounded-[3px];
+}
+
+.disabled {
+    filter: invert(92%) sepia(8%) saturate(157%) hue-rotate(173deg) brightness(97%) contrast(86%);
+}
+
+.label {
+    @apply text-light-100
+}
+
+.disabledlabel {
+    @apply text-light-900
+}
