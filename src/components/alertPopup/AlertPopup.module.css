@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    @apply cursor-default
+    relative
+    mb-3.5
+    z-50
+    top-[30px]
+    left-1/2
+    flex
+    items-start
+    w-max
+    h-auto
+    py-3 px-6
+    border-[1px]
+    rounded-[2px]
+    text-light-100;
+
+    transform: translate3d(-50%, 0, 0);
+    opacity: 1;
+    animation: fade-in 0.5s linear;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.success {
+    @apply bg-success-900
+    border-success-500;
+}
+
+.error {
+    @apply bg-danger-900
+    border-danger-500;
+}
+
+.message {
+    @apply table
+    mx-auto
+
+    text-regular_16
+    text-center;
+
+    span {
+        @apply text-bold_16;
+    }
+}
+
+.cross {
+    @apply cursor-pointer
+    float-right
+    pt-[5px]
+    ml-3;
+}
