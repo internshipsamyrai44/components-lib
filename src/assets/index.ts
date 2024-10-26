@@ -1,1 +1,1 @@
-export * from './icons'
+export { CrossWhite } from './icons/cross-white'
