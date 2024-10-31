@@ -1,5 +1,0 @@
-export { Calendar } from './calendar'
-export { CalendarOutline } from './calendar-outline'
-export { ChevronDown } from './chevron-down'
-export { ChevronLeft } from './chevron-left'
-export { ChevronRight } from './chevron-right'
