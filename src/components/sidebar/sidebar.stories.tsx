@@ -1,22 +1,22 @@
 import React from 'react'
 
 import {
-  Create,
-  CreateActive,
-  Favorites,
-  FavoritesActive,
-  Home,
-  HomeActive,
-  LogOut,
-  LogOutActive,
-  Messenger,
-  MessengerActive,
-  MyProfile,
-  MyProfileActive,
-  Search,
-  SearchActive,
-  Statistics,
-  StatisticsActive,
+  CreateActiveIcon,
+  CreateIcon,
+  FavoritesActiveIcon,
+  FavoritesIcon,
+  HomeActiveIcon,
+  HomeIcon,
+  LogOutActiveIcon,
+  LogOutIcon,
+  MessengerActiveIcon,
+  MessengerIcon,
+  MyProfileActiveIcon,
+  MyProfileIcon,
+  SearchActiveIcon,
+  SearchIcon,
+  StatisticsActiveIcon,
+  StatisticsIcon,
 } from '@/assets/icons'
 import {
   Sidebar,
@@ -25,7 +25,7 @@ import {
   SidebarGroupContent,
   SidebarItem,
   SidebarLink,
-} from '@/components/sidebar/sidebar'
+} from '@/components/sidebar'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
@@ -37,14 +37,14 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 const options = [
-  { icon: Home, iconActive: HomeActive, title: 'Home', url: '#' },
-  { icon: Create, iconActive: CreateActive, title: 'Create', url: '#' },
-  { icon: MyProfile, iconActive: MyProfileActive, title: 'My Profile', url: '#' },
-  { icon: Messenger, iconActive: MessengerActive, title: 'Messenger', url: '#' },
-  { icon: Search, iconActive: SearchActive, title: 'Search', url: '#' },
-  { icon: Statistics, iconActive: StatisticsActive, title: 'Statistics', url: '#' },
-  { icon: Favorites, iconActive: FavoritesActive, title: 'Favorites', url: '#' },
-  { icon: LogOut, iconActive: LogOutActive, title: 'Log Out', url: '#' },
+  { icon: HomeIcon, iconActive: HomeActiveIcon, title: 'Home', url: '#' },
+  { icon: CreateIcon, iconActive: CreateActiveIcon, title: 'Create', url: '#' },
+  { icon: MyProfileIcon, iconActive: MyProfileActiveIcon, title: 'My Profile', url: '#' },
+  { icon: MessengerIcon, iconActive: MessengerActiveIcon, title: 'Messenger', url: '#' },
+  { icon: SearchIcon, iconActive: SearchActiveIcon, title: 'Search', url: '#' },
+  { icon: StatisticsIcon, iconActive: StatisticsActiveIcon, title: 'Statistics', url: '#' },
+  { icon: FavoritesIcon, iconActive: FavoritesActiveIcon, title: 'Favorites', url: '#' },
+  { icon: LogOutIcon, iconActive: LogOutActiveIcon, title: 'Log Out', url: '#' },
 ]
 
 export const Default: Story = {
@@ -76,10 +76,7 @@ export const Default: Story = {
           </SidebarGroup>
           {options.slice(-1).map(item => (
             <SidebarLink href={item.url} key={item.title}>
-              <SidebarItem
-                icon={item.icon}
-                title={item.title}
-              />
+              <SidebarItem icon={item.icon} title={item.title} />
             </SidebarLink>
           ))}
         </SidebarContent>

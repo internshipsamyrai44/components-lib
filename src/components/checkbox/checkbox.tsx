@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ComponentPropsWithoutRef, useId } from 'react'
 
-import { CheckComponent } from '@/assets/icons/check'
+import { CheckIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 
@@ -28,7 +28,7 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
             {...props}
           >
             <CheckboxPrimitive.Indicator className={cn(style.indicator)}>
-              <CheckComponent className={cn(style.check, props.disabled ? style.disabled : null)} />
+              <CheckIcon className={cn(style.check, props.disabled ? style.disabled : null)} />
             </CheckboxPrimitive.Indicator>
           </CheckboxPrimitive.Root>
         </div>
@@ -45,6 +45,6 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
   }
 )
 
-Checkbox.displayName = CheckboxPrimitive.Root.displayName
+Checkbox.displayName = 'Checkbox'
 
 export { Checkbox }

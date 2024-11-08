@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ComponentPropsWithoutRef, ReactNode } from 'react'
 
-import { ChevronDown } from '@/assets/icons'
+import { ChevronDownIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
 import * as SelectPrimitive from '@radix-ui/react-select'
 
@@ -50,12 +50,14 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDown className={'group-data-[state=open]:rotate-180 transition-transform h-6 w-6'} />
+      <ChevronDownIcon
+        className={'group-data-[state=open]:rotate-180 transition-transform h-6 w-6'}
+      />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ))
 
-SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
+SelectTrigger.displayName = 'SelectTrigger'
 
 const SelectContent = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
@@ -94,7 +96,7 @@ const SelectContent = React.forwardRef<
   </SelectPrimitive.Portal>
 ))
 
-SelectContent.displayName = SelectPrimitive.Content.displayName
+SelectContent.displayName = 'SelectContent'
 
 const SelectLabel = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Label>,
@@ -107,7 +109,7 @@ const SelectLabel = React.forwardRef<
   />
 ))
 
-SelectLabel.displayName = SelectPrimitive.Label.displayName
+SelectLabel.displayName = 'SelectLabel'
 
 const SelectItem = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
@@ -128,6 +130,6 @@ const SelectItem = React.forwardRef<
   </SelectPrimitive.Item>
 ))
 
-SelectItem.displayName = SelectPrimitive.Item.displayName
+SelectItem.displayName = 'SelectItem'
 
 export { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue }

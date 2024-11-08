@@ -118,7 +118,7 @@ function getRange(start: number, end: number) {
   const length = end - start + 1
 
   /*
-        Create an array of certain length and set the elements within it from
+        CreateIcon an array of certain length and set the elements within it from
       start value to end value.
     */
 

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { DayPicker } from 'react-day-picker'
 
-import { ChevronLeft, ChevronRight } from '@/assets/icons'
+import { ChevronLeftIcon, ChevronRightIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
@@ -48,9 +48,9 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         ),
         Chevron: ({ orientation, ...props }) => {
           if (orientation === 'left') {
-            return <ChevronLeft {...props} className={'fill-light-100 h-[20px] w-[20px]'} />
+            return <ChevronLeftIcon {...props} className={'fill-light-100 h-[20px] w-[20px]'} />
           } else {
-            return <ChevronRight {...props} className={'fill-light-100 h-[20px] w-[20px]'} />
+            return <ChevronRightIcon {...props} className={'fill-light-100 h-[20px] w-[20px]'} />
           }
         },
       }}
@@ -65,6 +65,7 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
     />
   )
 }
+
 Calendar.displayName = 'Calendar'
 
 export { Calendar }

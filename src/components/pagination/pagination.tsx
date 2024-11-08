@@ -1,7 +1,6 @@
 import React, { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react'
 
-import { PaginationArrowBack } from '@/assets/icons/paginationArrowBack'
-import { PaginationArrowForward } from '@/assets/icons/paginationArrowForward'
+import { PaginationArrowBackIcon, PaginationArrowForwardIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
 
 import styles from './pagination.module.css'
@@ -63,7 +62,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
             disabled={disabledPrevBtn}
             onClick={() => handleClickPrevBtn()}
           >
-            <PaginationArrowBack />
+            <PaginationArrowBackIcon />
           </PaginationButton>
           {mainButtons}
           <PaginationButton
@@ -73,7 +72,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
               handleClickNextBtn()
             }}
           >
-            <PaginationArrowForward />
+            <PaginationArrowForwardIcon />
           </PaginationButton>
         </div>
         {children}
