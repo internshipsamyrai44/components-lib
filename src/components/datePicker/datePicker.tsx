@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { DateRange } from 'react-day-picker'
 
-import { Calendar as CalendarClassic, CalendarOutline } from '@/assets/icons'
+import { CalendarIcon as CalendarClassic, CalendarOutlineIcon } from '@/assets/icons'
 import { Button, Calendar, Popover, PopoverContent, PopoverTrigger } from '@/components'
 import { cn } from '@/lib/utils'
 import { format } from 'date-fns'
@@ -45,7 +45,7 @@ export function DatePicker({
     popoverText = <span>Pick a date</span>
   }
 
-  const CalendarIcon = open ? CalendarClassic : CalendarOutline
+  const CalendarIcon = open ? CalendarClassic : CalendarOutlineIcon
 
   return (
     <div className={cn('grid', className)}>

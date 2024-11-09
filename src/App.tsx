@@ -1,7 +1,5 @@
 import { Button } from '@/components'
-
 import { cn } from '@/lib/utils'
-
 
 export function App() {
   const changePage = () => {

@@ -1,7 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react'
 
-import CheckmarkOutline from '@/assets/icons/checkmarkOutline'
-import Recaptchalogo1 from '@/assets/icons/recaptchalogo1'
+import { CheckmarkOutlineIcon, RecaptchalogoIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
 
 type policyLinks = [string, string]
@@ -46,7 +45,7 @@ export const Recaptcha = (props: RecaptchaProps) => {
         <RecaptchaForm onClick={onClick} variant={variant} />
         <div className={'text-light-100 pl-8 text-roboto_12'}>{label}</div>
         <div className={'w-[44px] text-[5px] text-center '}>
-          <Recaptchalogo1 className={'w-[44px] h-[44px]'} />
+          <RecaptchalogoIcon className={'w-[44px] h-[44px]'} />
           <div className={'leading-normal'}>
             <a className={'text-light-100 hover:underline'} href={Privacy}>
               Privacy
@@ -100,7 +99,7 @@ const RecaptchaForm = ({ onClick, variant }: RecaptchaFormProps) => {
             ' absolute top-1/2 left-[18px] -translate-y-1/2 inline-block text-[31px] text-success-700'
           }
         >
-          <CheckmarkOutline />
+          <CheckmarkOutlineIcon />
         </div>
       )
     case 'loading':

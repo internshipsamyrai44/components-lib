@@ -1,7 +1,7 @@
+import { FlagRussiaIcon, FlagUnitedKingdomIcon } from '@/assets'
 import { SelectSeparator } from '@radix-ui/react-select'
 import { Meta, StoryObj } from '@storybook/react'
 
-import { FlagRussia, FlagUnitedKingdom } from '../../assets/icons'
 import { Select, SelectGroup, SelectItem, SelectLabel } from './select'
 
 const meta = {
@@ -104,13 +104,13 @@ export const WithIcon: Story = {
       <>
         <SelectItem value={'en'}>
           <div style={{ alignItems: 'center', display: 'flex', gap: 12 }}>
-            <FlagUnitedKingdom />
+            <FlagUnitedKingdomIcon />
             <span>English</span>
           </div>
         </SelectItem>
         <SelectItem value={'ru'}>
           <div style={{ alignItems: 'center', display: 'flex', gap: 12 }}>
-            <FlagRussia />
+            <FlagRussiaIcon />
             <span>Russian</span>
           </div>
         </SelectItem>

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ChangeEvent, KeyboardEvent, useState } from 'react'
 
-import { Eye, EyeOff, Search } from '@/assets/icons'
+import { EyeIcon, EyeOffIcon, SearchIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -69,7 +69,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 'absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200'
               }
             >
-              <Search
+              <SearchIcon
                 className={cn(
                   isFocused ? 'fill-light-100' : 'fill-light-900',
                   disabled && 'fill-dark-100',
@@ -108,7 +108,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               onClick={handlePasswordToggle}
               type={'button'}
             >
-              {showPassword ? <EyeOff /> : <Eye className={iconClasses} />}
+              {showPassword ? <EyeOffIcon /> : <EyeIcon className={iconClasses} />}
             </button>
           )}
         </div>

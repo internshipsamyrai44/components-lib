@@ -1,8 +1,6 @@
-import { useRef } from 'react'
-
 import { Meta, StoryObj } from '@storybook/react'
 
-import { Tabs, TabsContent } from './tabsRoot'
+import { Tabs, TabsContent } from './tabs'
 
 const meta = {
   argTypes: {},
