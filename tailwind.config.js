@@ -30,7 +30,4 @@ export default {
       ...theme.fontSize,
     },
   },
-  corePlugins: {
-    preflight: false,
-  },
 }

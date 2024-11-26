@@ -29,15 +29,10 @@ export default defineConfig({
       ],
       output: {
         dir: 'dist',
-        entryFileNames: '[name].cjs',
-        format: 'cjs',
         globals: {
           react: 'React',
           'react/jsx-runtime': 'react/jsx-runtime',
           'react-dom': 'ReactDOM',
-          tailwindcss: 'tailwindcss',
-          clsx: 'clsx',
-          'tailwind-merge': 'twMerge',
         },
       },
     },
