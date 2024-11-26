@@ -2,10 +2,9 @@
   "name": "@internshipsamyrai44-ui-kit/components-lib",
   "private": false,
   "version": "0.0.2",
-  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc && vite build",
     "format": "prettier --write src",
     "lint": "eslint --fix src/**/*.{tsx,ts,jsx,js} --no-error-on-unmatched-pattern && stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input",
     "preview": "vite preview",
@@ -15,38 +14,34 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/ui-react.umd.js",
+  "module": "./dist/ui-react.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.cjs"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.cjs"
-      }
-    },
-    "./style.css": "./dist/style.css"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/ui-react.es.js",
+      "require": "./dist/ui-react.umd.js",
+      "styles": "./dist/index.css"
+    }
   },
   "peerDependencies": {
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
     "@radix-ui/react-checkbox": "1.1.1",
     "@radix-ui/react-popover": "1.1.1",
     "@radix-ui/react-radio-group": "1.2.1",
     "@radix-ui/react-select": "2.1.1",
     "@radix-ui/react-slot": "1.1.0",
     "@radix-ui/react-tabs": "1.1.0",
-    "react": "18.0.0",
-    "react-dom": "18.0.0"
-  },
-  "dependencies": {
     "clsx": "2.1.1",
     "date-fns": "4.0.0-beta.1",
     "react-day-picker": "9.0.9",
-    "tailwind-merge": "2.4.0"
+    "sass": "^1.81.0",
+    "tailwind-merge": "2.4.0",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
   },
+  "dependencies": {},
   "devDependencies": {
     "@chromatic-com/storybook": "1.6.1",
     "@it-incubator/eslint-config": "1.0.3",

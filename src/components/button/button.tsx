@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 
 import { cn } from '@/lib/utils'
 import { Slot } from '@radix-ui/react-slot'
+import s from './button.module.scss'
 
 type Props = {
   asChild?: boolean
@@ -21,11 +22,9 @@ export const Button = forwardRef<ElementRef<'button'>, Props>(
       <Comp
         {...props}
         className={cn(
-          'cursor-pointer inline-flex items-center box-border rounded py-1.5 px-6',
-          'focus-visible:outline outline-2 focus-visible:outline-accent-700',
+          s.button,
           fullWidth && 'justify-center items-center w-full',
-          isPrimary &&
-            'text-light-100 bg-accent-500 active:text-light-100 active:bg-accent-700 hover:bg-accent-100 disabled:bg-accent-900 disabled:text-light-900',
+          isPrimary && s.primary,
           isSecondary &&
             'text-light-100 bg-dark-300 active:bg-dark-500 hover:bg-dark-100 focus-visible:bg-dark-300 focus-visible:outline-accent-300',
           isOutlined &&

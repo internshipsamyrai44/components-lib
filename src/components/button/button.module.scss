@@ -1,0 +1,7 @@
+.button {
+  @apply cursor-pointer inline-flex items-center box-border rounded py-1.5 px-6 focus-visible:outline outline-2 focus-visible:outline-accent-700;
+}
+
+.primary {
+  @apply text-light-100 bg-accent-500 active:text-light-100 active:bg-accent-700 hover:bg-accent-100 disabled:bg-accent-900 disabled:text-light-900;
+}

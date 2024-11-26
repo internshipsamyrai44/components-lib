@@ -4,15 +4,20 @@ import * as path from 'path'
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import tailwindcss from 'tailwindcss'
 
-import { devDependencies, peerDependencies } from './package.json'
+import { name, devDependencies, peerDependencies } from './package.json'
+
+const formattedName = name.match(/[^/]+$/)?.[0] ?? name
 
 export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, join('src', 'index.ts')),
       fileName: 'index',
-      formats: ['es', 'cjs'],
+      formats: ['es', 'umd'],
+      name: formattedName,
     },
     minify: false,
     rollupOptions: {
@@ -26,14 +31,30 @@ export default defineConfig({
         dir: 'dist',
         entryFileNames: '[name].cjs',
         format: 'cjs',
+        globals: {
+          react: 'React',
+          'react/jsx-runtime': 'react/jsx-runtime',
+          'react-dom': 'ReactDOM',
+          tailwindcss: 'tailwindcss',
+          clsx: 'clsx',
+          'tailwind-merge': 'twMerge',
+        },
       },
     },
     target: 'esnext',
+    sourcemap: false,
   },
   plugins: [
     react(),
-    dts({ rollupTypes: true }), // Output .d.ts files
+    dts({ insertTypesEntry: true }), // Output .d.ts files
+    cssInjectedByJsPlugin(),
   ],
+  css: {
+    postcss: {
+      // @ts-ignore
+      plugins: [tailwindcss],
+    },
+  },
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
   },
