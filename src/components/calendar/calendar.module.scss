@@ -11,7 +11,7 @@
 }
 
 .day {
-  @apply h-9 w-9 p-0 font-regular_16 aria-selected:opacity-100 text-center focus-within:relative focus-within:z-20;
+  @apply h-9 w-9 p-0 text-regular_16 aria-selected:opacity-100 text-center focus-within:relative focus-within:z-20;
 }
 
 .day-button {
@@ -35,7 +35,11 @@
 }
 
 .outside {
-  @apply text-light-900 data-outside:text-light-900;
+  @apply text-light-900;
+
+  &[data-outside] {
+    @apply text-light-900;
+  }
 }
 
 .range-end {
@@ -51,9 +55,9 @@
 }
 
 .selected {
-  @apply bg-accent-900 rounded-full
+  @apply bg-accent-900 rounded-full;
 
-    &.is-range {
+  &.is-range {
     @apply rounded-none;
   }
 
@@ -87,5 +91,9 @@
 }
 
 .weekends {
-  @apply text-danger-300 data-[outside=true]:text-light-900;
+  @apply text-danger-300;
+
+  &[data-outside] {
+    @apply text-light-900;
+  }
 }
