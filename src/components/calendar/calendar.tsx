@@ -3,54 +3,43 @@ import { DayPicker } from 'react-day-picker'
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
+import s from './calendar.module.scss'
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
 function Calendar({ className, classNames, showOutsideDays = true, ...props }: CalendarProps) {
   return (
     <DayPicker
-      className={cn('px-6 py-4', className)}
+      className={cn(s['day-picker'], className)}
       classNames={{
-        caption: 'flex justify-center pt-1 relative items-center',
-        caption_label: 'text-bold_16 ml-2',
-        day: cn(
-          'h-9 w-9 p-0 font-regular_16 aria-selected:opacity-100 text-center',
-          'focus-within:relative focus-within:z-20'
-        ),
-        day_button:
-          'flex items-center justify-center h-full w-full m-0 rounded-full bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-300',
-        hidden: 'invisible',
-        month: 'space-y-3',
-        month_caption: 'h-9 flex items-center',
-        nav: 'flex items-center absolute right-6 top-[16px]',
-        outside: 'text-light-900 data-outside:text-light-900',
-        range_end: 'bg-accent-900 rounded-r-full aria-selected:text-light-100',
-        range_middle: 'bg-accent-900 rounded-none',
-        range_start: 'bg-accent-900 rounded-l-full aria-selected:text-light-100',
-        selected: `bg-accent-900 ${props.mode === 'range' ? 'rounded-none' : 'rounded-full'} hover:bg-accent-700`,
-        today: 'text-bold_16 text-accent-500 hover:text-accent-100 active:text-light-100',
-        weekday: 'text-regular_16 text-light-900 ',
-        weekdays: 'h-[40px] ',
-        weeks: 'before:block before:h-3',
+        caption: s.caption,
+        caption_label: s['caption-label'],
+        day: s.day,
+        day_button: s['day-button'],
+        hidden: s.hidden,
+        month: s.month,
+        month_caption: s['month-caption'],
+        nav: s.nav,
+        outside: s.outside,
+        range_end: s['range-end'],
+        range_middle: s['range-middle'],
+        range_start: s['range-start'],
+        selected: cn(s.selected, props.mode === 'range' && s['is-range']),
+        today: s.today,
+        weekday: s.weekday,
+        weekdays: s.weekdays,
+        weeks: s.weeks,
         ...classNames,
       }}
       components={{
         Button: ({ className, ...props }) => (
-          <button
-            type={'button'}
-            {...props}
-            className={cn(
-              className,
-              'flex items-center justify-center h-9 w-9 m-0 rounded-full bg-dark-100 fill-light-100',
-              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-300'
-            )}
-          />
+          <button type={'button'} {...props} className={cn(className, s.button)} />
         ),
         Chevron: ({ orientation, ...props }) => {
           if (orientation === 'left') {
-            return <ChevronLeftIcon {...props} className={'fill-light-100 h-[20px] w-[20px]'} />
+            return <ChevronLeftIcon {...props} className={s.chevron} />
           } else {
-            return <ChevronRightIcon {...props} className={'fill-light-100 h-[20px] w-[20px]'} />
+            return <ChevronRightIcon {...props} className={s.chevron} />
           }
         },
       }}
@@ -58,7 +47,7 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         weekends: { dayOfWeek: [5, 6] },
       }}
       modifiersClassNames={{
-        weekends: cn('text-danger-300 data-[outside=true]:text-light-900'),
+        weekends: cn(s.weekends),
       }}
       showOutsideDays={showOutsideDays}
       {...props}

@@ -1,0 +1,91 @@
+.day-picker {
+  @apply px-6 py-4;
+}
+
+.caption {
+  @apply flex justify-center pt-1 relative items-center;
+}
+
+.caption-label {
+  @apply text-bold_16 ml-2;
+}
+
+.day {
+  @apply h-9 w-9 p-0 font-regular_16 aria-selected:opacity-100 text-center focus-within:relative focus-within:z-20;
+}
+
+.day-button {
+  @apply flex items-center justify-center h-full w-full m-0 rounded-full bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-300;
+}
+
+.hidden {
+  @apply invisible;
+}
+
+.month {
+  @apply space-y-3;
+}
+
+.month-caption {
+  @apply h-9 flex items-center;
+}
+
+.nav {
+  @apply flex items-center absolute right-6 top-[16px];
+}
+
+.outside {
+  @apply text-light-900 data-outside:text-light-900;
+}
+
+.range-end {
+  @apply bg-accent-900 rounded-r-full aria-selected:text-light-100;
+}
+
+.range-middle {
+  @apply bg-accent-900 rounded-none;
+}
+
+.range-start {
+  @apply bg-accent-900 rounded-l-full aria-selected:text-light-100;
+}
+
+.selected {
+  @apply bg-accent-900 rounded-full
+
+    &.is-range {
+    @apply rounded-none;
+  }
+
+  &:hover {
+    @apply bg-accent-700;
+  }
+}
+
+.today {
+  @apply text-bold_16 text-accent-500 hover:text-accent-100 active:text-light-100;
+}
+
+.weekday {
+  @apply text-regular_16 text-light-900;
+}
+
+.weekdays {
+  @apply h-[40px];
+}
+
+.weeks {
+  @apply before:block before:h-3;
+}
+
+.button {
+  @apply flex items-center justify-center h-9 w-9 m-0 rounded-full bg-dark-100 fill-light-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-300;
+}
+
+.chevron {
+  @apply fill-light-100 h-[20px] w-[20px];
+}
+
+.weekends {
+  @apply text-danger-300 data-[outside=true]:text-light-900;
+}
