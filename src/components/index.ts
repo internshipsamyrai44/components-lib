@@ -1,4 +1,4 @@
-export * from './alertPopup'
+export * from './alertpopup'
 export * from './button'
 export * from './calendar'
 export * from './card'
