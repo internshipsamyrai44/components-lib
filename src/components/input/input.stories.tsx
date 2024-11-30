@@ -29,7 +29,7 @@ export const Password: Story = {
   },
 }
 
-export const Search: Story = {
+export const SearchMode: Story = {
   args: {
     id: 'search',
     placeholder: 'Input search',
