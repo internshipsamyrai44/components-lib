@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { AlertPopup } from './alertPopup'
+import { Alertpopup } from './alertpopup'
 
 const meta = {
-  component: AlertPopup,
-  title: 'Components/AlertPopup',
-} satisfies Meta<typeof AlertPopup>
+  component: Alertpopup,
+  title: 'Components/Alertpopup',
+} satisfies Meta<typeof Alertpopup>
 
 export default meta
 

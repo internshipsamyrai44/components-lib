@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom'
 import { CrossWhiteIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
 
-import style from './alertPopup.module.css'
+import style from './alertpopup.module.css'
 
 type PropsType = {
   alertType: 'error' | 'success'
@@ -13,7 +13,7 @@ type PropsType = {
   message: string
 }
 
-export const AlertPopup = (props: PropsType): React.ReactElement => {
+export const Alertpopup = (props: PropsType): React.ReactElement => {
   const { alertType, callback, duration = 5000, message } = props
   const [open, setOpen] = useState(true)
   const [alertMessage, setAlertMessage] = useState<null | string>(message)

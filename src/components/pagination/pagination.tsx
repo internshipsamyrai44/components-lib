@@ -47,7 +47,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
               key={i}
               onClick={() => handlePageChange(pageLocal as number)}
             >
-              <div className={cn('text-regular_14')}>{pageLocal}</div>
+              <div className={cn(styles.btntext)}>{pageLocal}</div>
             </PaginationButton>
           )
         }),
@@ -121,9 +121,9 @@ export const SelectContainer = ({
 
   return (
     <div className={classNames.select} {...rest}>
-      <span className={cn('text-regular_14 text-light-100')}>{content[0] || ''}</span>
+      <span className={cn(styles.pagenumbertext)}>{content[0] || ''}</span>
       <div>{children}</div>
-      <span className={cn('text-regular_14 text-light-100')}> {content[1] || ''}</span>
+      <span className={cn(styles.pagenumbertext)}> {content[1] || ''}</span>
     </div>
   )
 }

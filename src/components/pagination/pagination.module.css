@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .root {
     @apply flex
     items-center
@@ -49,4 +45,13 @@
     gap-2.5
     items-center
     justify-center;
+}
+
+.btntext {
+    @apply text-regular_14
+}
+
+.pagenumbertext {
+    @apply text-regular_14
+    text-light-100
 }
