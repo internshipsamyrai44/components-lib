@@ -5,6 +5,8 @@ import { ChevronDownIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
 import * as SelectPrimitive from '@radix-ui/react-select'
 
+import s from './select.module.scss'
+
 const Select = ({
   children,
   placeholder,
@@ -18,7 +20,7 @@ const Select = ({
 } & ComponentPropsWithoutRef<typeof SelectPrimitive.Root>) => (
   <SelectPrimitive.Root {...props}>
     <SelectTrigger {...triggerProps}>
-      <div className={'flex gap-3 items-center'}>
+      <div className={s.triggerLabel}>
         {triggerIcon && <>{triggerIcon}</>}
         <SelectValue placeholder={placeholder} />
       </div>
@@ -35,24 +37,10 @@ const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
 >(({ children, className, ...props }, ref) => (
-  <SelectPrimitive.Trigger
-    className={cn(
-      'group cursor-pointer flex items-center justify-between box-border w-full h-9 p-1.5 px-3 rounded-sm text-light-900 leading-6',
-      'bg-inherit border border-dark-100',
-      'hover:text-light-100',
-      'focus-visible:outline-none focus-visible:border-2 focus-visible:border-accent-500',
-      'data-[state=open]:text-light-100 data-[state=open]:border-light-100 data-[state=open]:bg-dark-500',
-      'data-[disabled]:text-dark-100 data-[disabled]:pointer-events-none',
-      className
-    )}
-    ref={ref}
-    {...props}
-  >
+  <SelectPrimitive.Trigger className={cn('group', s.trigger, className)} ref={ref} {...props}>
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDownIcon
-        className={'group-data-[state=open]:rotate-180 transition-transform h-6 w-6'}
-      />
+      <ChevronDownIcon className={'group'} />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ))

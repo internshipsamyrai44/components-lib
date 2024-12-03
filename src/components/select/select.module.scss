@@ -1,0 +1,47 @@
+.trigger {
+  @apply cursor-pointer flex items-center justify-between box-border w-full h-9 p-1.5 px-3 rounded-sm
+  leading-6 text-light-900
+  bg-inherit border border-dark-100;
+
+  .trigger-chevron {
+    @apply transform transition-transform;
+  }
+
+  &[data-state='open'] {
+    @apply text-light-100 border-light-100 bg-dark-500;
+
+    .trigger-chevron {
+      @apply rotate-180;
+    }
+  }
+
+  &[data-disabled] {
+    @apply text-dark-100 pointer-events-none;
+  }
+
+  &:hover {
+    @apply hover:text-light-100;
+  }
+
+  &:focus-visible {
+    @apply focus-visible:outline-none focus-visible:border-2 focus-visible:border-accent-500;
+  }
+}
+
+.trigger-label {
+  @apply flex gap-3 items-center;
+}
+
+.content {
+}
+
+.viewport {
+}
+
+.item {
+  &:hover {
+  }
+
+  &:focus-visible {
+  }
+}
