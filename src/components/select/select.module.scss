@@ -7,7 +7,7 @@
   @apply data-[disabled]:text-dark-100 data-[disabled]:pointer-events-none;
 
   .icon {
-    @apply transform transition-transform h-6 w-6;
+    @apply transition-transform h-6 w-6;
   }
 
   &[data-state='open'] {
@@ -38,9 +38,11 @@
 //  @apply data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1;
 //}
 //
-//.label {
-//  @apply py-1.5 pl-8 pr-2 text-sm font-semibold text-light-900;
-//}
+
+.label {
+  @apply py-1.5 pl-8 pr-2 text-small font-semibold text-light-900;
+}
+
 //
 //.item {
 //  @apply relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2.5 pr-2 text-sm outline-none;
