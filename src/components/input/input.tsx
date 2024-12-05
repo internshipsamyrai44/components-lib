@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { ChangeEvent, KeyboardEvent, useState } from 'react'
-
 import { EyeIcon, EyeOffIcon, SearchIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
+import s from './input.module.scss'
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode
@@ -53,44 +53,30 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       onKeyDown?.(e)
     }
 
-    const iconClasses = cn({ 'fill-dark-100': disabled }, { 'fill-light-100': !disabled })
-
     return (
-      <div className={cn('flex flex-col w-full gap-2', className)}>
-        <label
-          className={cn('text-regular_14 text-light-900', disabled ? 'text-light-900/50' : '')}
-        >
+      <div className={cn(s['input-container'], className)}>
+        <label data-disabled={disabled} className={s.label}>
           {label}
         </label>
-        <div className={'flex relative'}>
+        <div className={s['input-wrapper']}>
           {isSearch && (
-            <span
-              className={
-                'absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200'
-              }
-            >
+            <span className={s['search-icon']}>
               <SearchIcon
-                className={cn(
-                  isFocused ? 'fill-light-100' : 'fill-light-900',
-                  disabled && 'fill-dark-100',
-                  value && 'text-light-100',
-                  errorMessage && 'fill-light-100'
-                )}
+                className={cn(s['search-icon-fill'], isFocused && s['search-icon-fill-focus'])}
+                data-disabled={disabled}
+                data-value={value}
+                data-error={errorMessage}
               />
             </span>
           )}
           <input
             aria-invalid={!!errorMessage}
             aria-label={label}
-            className={cn(
-              'flex border-box bg-dark-700 text-light-900 text-regular_16 py-1.5 px-3 min-h-[36px] w-full rounded-sm border border-input border-dark-100 placeholder:text-light-900 hover:border-light-900 disabled:cursor-not-allowed',
-              'focus:outline-none focus:border-light-100 focus:text-light-100 focus:placeholder:text-light-100',
-              disabled ? 'placeholder:text-light-900/50 hover:border-light-900/50' : '',
-              isSearch ? 'px-10' : '',
-              errorMessage && !isFocused ? 'border-danger-500 placeholder:text-light-100' : '',
-              className
-            )}
+            className={cn(s.input, isSearch && s['input-search'], className)}
             disabled={disabled}
+            data-disabled={disabled}
+            data-error={errorMessage}
+            data-isFocused={isFocused}
             onBlur={() => setIsFocused(false)}
             onChange={handleChange}
             onFocus={() => setIsFocused(true)}
@@ -103,20 +89,20 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {isPassword && (
             <button
               aria-label={showPassword ? 'Hide password' : 'Show password'}
-              className={cn('absolute top-1/2 right-3 transform -translate-y-1/2', iconClasses)}
+              className={s['password-toggle']}
               disabled={disabled}
               onClick={handlePasswordToggle}
               type={'button'}
             >
-              {showPassword ? <EyeOffIcon /> : <EyeIcon className={iconClasses} />}
+              {showPassword ? (
+                <EyeOffIcon />
+              ) : (
+                <EyeIcon data-disabled={disabled} className={s['password-toggle-icon']} />
+              )}
             </button>
           )}
         </div>
-        <div
-          className={
-            'text-regular_14 text-danger-500 error-message min-h-6 overflow-hidden whitespace-nowrap text-ellipsis'
-          }
-        >
+        <div className={s['input-error-message']}>
           {errorMessage && !isFocused ? errorMessage : ''}
         </div>
         )
