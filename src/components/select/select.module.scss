@@ -1,0 +1,49 @@
+.trigger {
+  @apply cursor-pointer flex items-center justify-between box-border w-full h-9 p-1.5 px-3 rounded-sm text-light-900 leading-6;
+  @apply bg-inherit border border-dark-100;
+  @apply hover:text-light-100;
+  @apply focus-visible:outline-none focus-visible:border-2 focus-visible:border-accent-500;
+  @apply data-[state=open]:text-light-100 data-[state=open]:border-light-100 data-[state=open]:bg-dark-500;
+  @apply data-[disabled]:text-dark-100 data-[disabled]:pointer-events-none;
+
+  .icon {
+    @apply transition-transform h-6 w-6;
+  }
+
+  &[data-state='open'] {
+    .icon {
+      @apply rotate-180;
+    }
+  }
+}
+
+.container {
+  @apply relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border shadow-md;
+}
+
+.viewport {
+  @apply min-w-[var(--radix-select-trigger-width)];
+}
+
+.popper-position {
+  @apply data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1;
+  @apply w-[var(--radix-select-trigger-width)] max-h-[var(--radix-select-content-available-height)];
+  @apply bg-dark-500 border border-light-100 rounded-sm;
+}
+
+.popper-position-viewport {
+  @apply h-[var(--radix-select-trigger-height)] w-full;
+}
+
+.label {
+  @apply py-1.5 pl-8 pr-2 text-small font-semibold text-light-900;
+}
+
+.item {
+  @apply relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2.5 pr-2 outline-none;
+  @apply text-light-100 focus:bg-dark-300 focus:text-accent-500;
+}
+
+.flex-gap {
+  @apply flex gap-3 items-center;
+}
