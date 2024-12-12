@@ -106,9 +106,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             </button>
           )}
         </div>
-        <div className={s['input-error-message']}>
-          {errorMessage && !isFocused ? errorMessage : ''}
-        </div>
+        <div className={s['input-error-message']}>{errorMessage ? errorMessage : ''}</div>
       </div>
     )
   }
