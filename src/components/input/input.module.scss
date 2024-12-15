@@ -45,13 +45,13 @@
     @apply cursor-not-allowed placeholder:text-light-900/50 hover:border-light-900/50;
   }
 
-  &[data-error]:not([data-isFocused]) {
-    @apply border-danger-500 placeholder:text-light-100;
+  &[data-error] {
+    @apply border-danger-500;
   }
+}
 
-  &[data-focused] {
-    @apply border-light-100 text-light-100 placeholder:text-light-100;
-  }
+.input-focused {
+  @apply border-light-100 text-light-100 placeholder:text-light-100;
 }
 
 .input-search {

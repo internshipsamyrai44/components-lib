@@ -11,4 +11,11 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    style: {
+      width: '200px',
+      height: '200px',
+    },
+  },
+}

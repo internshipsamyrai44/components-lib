@@ -72,11 +72,15 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input
             aria-invalid={!!errorMessage}
             aria-label={label}
-            className={cn(s.input, isSearch && s['input-search'])}
+            className={cn(
+              s.input,
+              isSearch && s['input-search'],
+              isFocused && s['input-focused'],
+              className
+            )}
             disabled={disabled}
             data-disabled={disabled}
             data-error={errorMessage}
-            data-isFocused={isFocused}
             onBlur={() => setIsFocused(false)}
             onChange={handleChange}
             onFocus={() => setIsFocused(true)}
@@ -102,10 +106,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             </button>
           )}
         </div>
-        <div className={s['input-error-message']}>
-          {errorMessage && !isFocused ? errorMessage : ''}
-        </div>
-        )
+        <div className={s['input-error-message']}>{errorMessage ? errorMessage : ''}</div>
       </div>
     )
   }
