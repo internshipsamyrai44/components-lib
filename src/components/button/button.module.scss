@@ -8,72 +8,71 @@
   &.fullWidth {
     @apply w-full;
   }
+}
+.primary {
+  @apply text-light-100 bg-accent-500;
 
-  &.primary {
-    @apply text-light-100 bg-accent-500;
-
-    &:active {
-      @apply text-light-100 bg-accent-700;
-    }
-
-    &:hover {
-      @apply bg-accent-100;
-    }
-
-    &:disabled {
-      @apply bg-accent-900 text-light-900;
-    }
+  &:active {
+    @apply text-light-100 bg-accent-700;
   }
 
-  &.secondary {
-    @apply text-light-100 bg-dark-300;
-
-    &:active {
-      @apply bg-dark-500;
-    }
-
-    &:hover {
-      @apply bg-dark-100;
-    }
-
-    &:focus-visible {
-      @apply bg-dark-300 outline-accent-300;
-    }
+  &:hover {
+    @apply bg-accent-100;
   }
 
-  &.outlined {
-    @apply text-accent-500 bg-transparent border-2 border-accent-500;
+  &:disabled {
+    @apply bg-accent-900 text-light-900;
+  }
+}
 
-    &:active {
-      @apply border-accent-700 text-accent-700;
-    }
+.secondary {
+  @apply text-light-100 bg-dark-300;
 
-    &:hover {
-      @apply border-accent-100 text-accent-100;
-    }
-
-    &:focus-visible {
-      @apply border-transparent text-accent-700;
-    }
-
-    &:disabled {
-      @apply border-accent-900 text-accent-900;
-    }
+  &:active {
+    @apply bg-dark-500;
   }
 
-  &.ghost {
-    @apply border-none text-accent-500 bg-transparent;
+  &:hover {
+    @apply bg-dark-100;
+  }
 
-    &:active {
-      @apply text-accent-700;
-    }
+  &:focus-visible {
+    @apply bg-dark-300 outline-accent-300;
+  }
+}
 
-    &:hover {
-      @apply text-accent-100;
-    }
+.outlined {
+  @apply text-accent-500 bg-transparent border-2 border-accent-500;
 
-    &:disabled {
-      @apply bg-transparent text-accent-900;
-    }
+  &:active {
+    @apply border-accent-700 text-accent-700;
+  }
+
+  &:hover {
+    @apply border-accent-100 text-accent-100;
+  }
+
+  &:focus-visible {
+    @apply border-transparent text-accent-700;
+  }
+
+  &:disabled {
+    @apply border-accent-900 text-accent-900;
+  }
+}
+
+.ghost {
+  @apply border-none text-accent-500 bg-transparent;
+
+  &:active {
+    @apply text-accent-700;
+  }
+
+  &:hover {
+    @apply text-accent-100;
+  }
+
+  &:disabled {
+    @apply bg-transparent text-accent-900;
   }
 }
