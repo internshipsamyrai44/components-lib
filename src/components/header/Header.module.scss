@@ -1,0 +1,15 @@
+.header-container {
+  @apply flex items-center justify-between w-full py-[12px] px-[60px] border-b-[1px] border-b-dark-300;
+}
+
+.functional-container {
+  @apply flex items-center justify-between gap-[24px];
+}
+
+.select {
+  @apply w-[160px] mr-[12px];
+}
+
+.select-value {
+  @apply flex items-center gap-[12px];
+}
