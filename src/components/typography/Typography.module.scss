@@ -1,0 +1,57 @@
+.typography {
+  @apply m-0;
+}
+
+.large {
+  @apply text-large text-light-100;
+}
+
+.h1 {
+  @apply text-h1 text-light-100;
+}
+
+.h2 {
+  @apply text-h2 text-light-100;
+}
+
+.h3 {
+  @apply text-h3 text-light-100;
+}
+
+.regular-text-16 {
+  @apply text-regular_16 text-light-100;
+}
+
+.bold-text-16 {
+  @apply text-bold_16 text-light-100;
+}
+
+.regular-text-14 {
+  @apply text-regular_14 text-light-100;
+}
+
+.medium-text-14 {
+  @apply text-medium_14 text-light-100;
+}
+
+.bold-text-14 {
+  @apply text-bold_14 text-light-100;
+}
+
+.small-text {
+  @apply text-small text-light-100;
+}
+
+.semi-bold-small-text {
+  @apply text-semi-bold_small text-light-100;
+}
+
+.regular-link,
+.regular-link:visited {
+  @apply cursor-pointer m-0 text-regular_14 text-accent-500 underline;
+}
+
+.small-link,
+.small-link:visited {
+  @apply cursor-pointer m-0 text-small text-accent-500 underline;
+}
