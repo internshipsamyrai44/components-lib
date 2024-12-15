@@ -1,6 +1,6 @@
-import s from './Header.module.scss'
 import { Button, Select, SelectItem } from '@/components'
 import { FlagRussiaIcon, FlagUnitedKingdomIcon } from '@/assets'
+import s from './Header.module.scss'
 
 const Header = () => {
   return (
@@ -12,13 +12,13 @@ const Header = () => {
         <div className={s['select']}>
           <Select defaultValue={'en'}>
             <SelectItem value={'en'}>
-              <div style={{ alignItems: 'center', display: 'flex', gap: 12 }}>
+              <div className={s['select-value']}>
                 <FlagUnitedKingdomIcon />
                 <span>English</span>
               </div>
             </SelectItem>
             <SelectItem value={'ru'}>
-              <div style={{ alignItems: 'center', display: 'flex', gap: 12 }}>
+              <div className={s['select-value']}>
                 <FlagRussiaIcon />
                 <span>Russian</span>
               </div>
