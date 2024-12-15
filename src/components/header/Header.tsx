@@ -1,13 +1,14 @@
 import { Button, Select, SelectItem } from '@/components'
 import { FlagRussiaIcon, FlagUnitedKingdomIcon } from '@/assets'
+import { Typography } from '@/components/typography'
 import s from './Header.module.scss'
 
 const Header = () => {
   return (
     <header className={s['header-container']}>
-      <a className={s['header-logo']} href={'/'}>
+      <Typography as={'a'} variant={'large'} href={'/'}>
         Inctagram
-      </a>
+      </Typography>
       <div className={s['functional-container']}>
         <div className={s['select']}>
           <Select defaultValue={'en'}>

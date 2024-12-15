@@ -2,10 +2,6 @@
   @apply flex items-center justify-between w-full py-[12px] px-[60px] border-b-[1px] border-b-dark-300;
 }
 
-.header-logo {
-  @apply text-large text-light-100;
-}
-
 .functional-container {
   @apply flex items-center justify-between gap-[24px];
 }
