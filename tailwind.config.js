@@ -22,6 +22,9 @@ export default {
       fontFamily: {
         ...theme.fontFamily,
       },
+      opacity: {
+        '40': '0.4'
+      },
       animation: {
         loading_linear: 'line_animation 1s linear infinite;'
       },
