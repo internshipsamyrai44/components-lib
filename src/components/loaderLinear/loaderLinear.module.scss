@@ -1,0 +1,18 @@
+.loader {
+  @apply fixed
+  z-10
+  top-0
+  right-0
+  left-0
+  overflow-hidden
+  w-full
+  h-1
+  bg-dark-100
+  before:absolute
+  before:-left-1/2
+  before:w-2/5
+  before:h-1
+  before:bg-accent-500
+  before:animate-loading_linear
+  }
+
