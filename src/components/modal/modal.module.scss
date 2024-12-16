@@ -1,0 +1,56 @@
+.wrap {
+  @apply bg-dark-900/40
+  fixed
+  w-full
+  h-full
+  z-50
+  top-0
+  left-0
+  flex
+  items-center
+  justify-center;
+}
+
+.container {
+  @apply border
+  border-solid
+  border-b-dark-100
+  relative
+  bg-dark-300
+  rounded
+  pt-3
+  pb-5
+  px-6
+}
+
+.header {
+  @apply pb-2.5
+  flex
+  flex-row
+  justify-between
+  items-center
+  border-b
+  border-solid
+  border-b-dark-100;
+}
+
+.closeButton {
+  @apply border-none
+  cursor-pointer
+  bg-none
+  hover:text-dark-900;
+}
+
+.title {
+  @apply text-light-100
+  mr-2.5
+  font-bold
+  font-sans
+  text-h1
+}
+
+.content {
+  @apply mt-2.5
+  text-light-100
+}
+

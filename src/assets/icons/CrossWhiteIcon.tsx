@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export const CrossWhiteIcon = (props: React.SVGProps<SVGSVGElement>) => (
+export const CrossWhiteIcon = (props: React.SVGProps<SVGSVGElement & HTMLDivElement>) => (
   <svg fill={'none'} height={24} width={24} xmlns={'http://www.w3.org/2000/svg'} {...props}>
     <path
       d={
