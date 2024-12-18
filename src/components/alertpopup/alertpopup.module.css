@@ -1,6 +1,6 @@
 .container {
     @apply cursor-default
-    relative
+    absolute
     mb-3.5
     z-50
     top-[30px]
