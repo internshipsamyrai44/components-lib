@@ -4,7 +4,7 @@ import type { MouseEventHandler } from 'react';
 
 import s from './Modal.module.scss';
 import { createContainer } from "@/components/portal";
-import Portal from "@/components/portal/portal";
+import { Portal } from '@/components/portal/portal'
 import { CrossWhiteIcon } from "@/assets";
 import { cn } from "@/lib/utils";
 
@@ -17,7 +17,7 @@ type Props = {
   className?: string;
 };
 
-const Modal = (props: Props) => {
+export const Modal = (props: Props) => {
   const { title, onClose, children, className } = props;
 
   const rootRef = useRef<HTMLDivElement>(null);
@@ -75,5 +75,3 @@ const Modal = (props: Props) => {
     </Portal>
   ) : null;
 };
-
-export default Modal;
