@@ -1,84 +1,78 @@
-// Button.module.scss
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .button {
-  @apply cursor-pointer inline-flex items-center box-border rounded py-1.5 px-6;
+  @apply cursor-pointer inline-flex items-center justify-center box-border rounded py-1.5 px-6;
 
   &:focus-visible {
     @apply outline outline-2 outline-accent-700;
   }
 
   &.fullWidth {
-    @apply justify-center w-full;
+    @apply w-full;
+  }
+}
+.primary {
+  @apply text-light-100 bg-accent-500;
+
+  &:active {
+    @apply text-light-100 bg-accent-700;
   }
 
-  &.primary {
-    @apply text-light-100 bg-accent-500;
-
-    &:active {
-      @apply text-light-100 bg-accent-700;
-    }
-
-    &:hover {
-      @apply bg-accent-100;
-    }
-
-    &:disabled {
-      @apply bg-accent-900 text-light-900;
-    }
+  &:hover {
+    @apply bg-accent-100;
   }
 
-  &.secondary {
-    @apply text-light-100 bg-dark-300;
+  &:disabled {
+    @apply bg-accent-900 text-light-900;
+  }
+}
 
-    &:active {
-      @apply bg-dark-500;
-    }
+.secondary {
+  @apply text-light-100 bg-dark-300;
 
-    &:hover {
-      @apply bg-dark-100;
-    }
-
-    &:focus-visible {
-      @apply bg-dark-300 outline-accent-300;
-    }
+  &:active {
+    @apply bg-dark-500;
   }
 
-  &.outlined {
-    @apply text-accent-500 bg-transparent border-2 border-accent-500;
-
-    &:active {
-      @apply border-accent-700 text-accent-700;
-    }
-
-    &:hover {
-      @apply border-accent-100 text-accent-100;
-    }
-
-    &:focus-visible {
-      @apply border-transparent text-accent-700;
-    }
-
-    &:disabled {
-      @apply border-accent-900 text-accent-900;
-    }
+  &:hover {
+    @apply bg-dark-100;
   }
 
-  &.ghost {
-    @apply border-none text-accent-500 bg-transparent;
+  &:focus-visible {
+    @apply bg-dark-300 outline-accent-300;
+  }
+}
 
-    &:active {
-      @apply text-accent-700;
-    }
+.outlined {
+  @apply text-accent-500 bg-transparent border-2 border-accent-500;
 
-    &:hover {
-      @apply text-accent-100;
-    }
+  &:active {
+    @apply border-accent-700 text-accent-700;
+  }
 
-    &:disabled {
-      @apply bg-transparent text-accent-900;
-    }
+  &:hover {
+    @apply border-accent-100 text-accent-100;
+  }
+
+  &:focus-visible {
+    @apply border-transparent text-accent-700;
+  }
+
+  &:disabled {
+    @apply border-accent-900 text-accent-900;
+  }
+}
+
+.ghost {
+  @apply border-none text-accent-500 bg-transparent;
+
+  &:active {
+    @apply text-accent-700;
+  }
+
+  &:hover {
+    @apply text-accent-100;
+  }
+
+  &:disabled {
+    @apply bg-transparent text-accent-900;
   }
 }

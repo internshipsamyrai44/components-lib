@@ -5,11 +5,10 @@ import { CheckIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 
-import style from './checkbox.module.css'
+import style from './checkbox.module.scss'
 
 type CheckboxProps = {
   label?: null | string
-
   onChange?: (checked: CheckboxPrimitive.CheckedState) => void
 } & ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
 
@@ -19,16 +18,16 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
     const finalId = id ?? innerId
 
     return (
-      <div className={style.container}>
-        <div className={cn(props.disabled ? style.disabledwrapper : style.wrapper)}>
+      <div className={cn(style.container, className)}>
+        <div className={cn(style.wrapper, props.disabled ? style['is-disabled'] : '')}>
           <CheckboxPrimitive.Root
-            className={cn(style.root, className)}
+            className={style.root}
             onCheckedChange={onChange}
             ref={ref}
             {...props}
           >
-            <CheckboxPrimitive.Indicator className={cn(style.indicator)}>
-              <CheckIcon className={cn(style.check, props.disabled ? style.disabled : null)} />
+            <CheckboxPrimitive.Indicator asChild>
+              <CheckIcon className={cn(style.check, props.disabled && style.disabled)} />
             </CheckboxPrimitive.Indicator>
           </CheckboxPrimitive.Root>
         </div>

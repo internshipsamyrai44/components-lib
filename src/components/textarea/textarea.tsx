@@ -10,16 +10,13 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, disabled, errorText, label, ...props }, ref) => {
+  ({ className, errorText, label, ...props }, ref) => {
     return (
       <div className={cn(s.container, className)}>
-        {label && <label className={cn(s.label, disabled && s['is-disabled'])}>{label}</label>}
-        <textarea
-          className={cn(s.textarea, errorText && s['is-error'])}
-          disabled={disabled}
-          ref={ref}
-          {...props}
-        />
+        {label && (
+          <label className={cn(s.label, props.disabled && s['is-disabled'])}>{label}</label>
+        )}
+        <textarea className={cn(s.textarea, errorText && s['is-error'])} ref={ref} {...props} />
         <span className={s['error-text']}>{errorText}</span>
       </div>
     )

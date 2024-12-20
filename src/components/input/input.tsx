@@ -72,12 +72,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input
             aria-invalid={!!errorMessage}
             aria-label={label}
-            className={cn(
-              s.input,
-              isSearch && s['input-search'],
-              isFocused && s['input-focused'],
-              className
-            )}
+            className={cn(s.input, isSearch && s['input-search'], isFocused && s['input-focused'])}
             disabled={disabled}
             data-disabled={disabled}
             data-error={errorMessage}

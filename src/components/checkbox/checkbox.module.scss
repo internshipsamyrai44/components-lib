@@ -1,0 +1,55 @@
+.container {
+  @apply flex flex-row items-center gap-0.5;
+}
+
+.wrapper {
+  @apply flex-shrink-0
+    flex
+    items-center
+    justify-center
+    h-[36px]
+    w-[36px]
+    bg-transparent
+    rounded-[50%];
+
+  &:not(.is-disabled) {
+    @apply hover:bg-dark-300
+    active:bg-dark-100
+    focus-within:bg-dark-300;
+  }
+}
+
+.root {
+  @apply h-[18px]
+    w-[18px]
+    shrink-0
+    flex
+    items-center
+    justify-center
+    rounded-[3px]
+    border-solid
+    border-2
+    border-light-100
+    bg-transparent
+    focus-visible:outline-none
+    disabled:border-light-900
+    data-[state=checked]:text-light-100
+    data-[state=checked]:bg-light-100
+    data-[state=checked]:disabled:bg-light-900;
+}
+
+.check {
+  @apply h-[18px] w-[18px];
+}
+
+.disabled {
+  filter: invert(92%) sepia(8%) saturate(157%) hue-rotate(173deg) brightness(97%) contrast(86%);
+}
+
+.label {
+  @apply text-light-100;
+}
+
+.disabledlabel {
+  @apply text-light-900;
+}
