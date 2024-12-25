@@ -3,6 +3,7 @@
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
+import s from './sidebar.module.scss'
 
 interface SidebarItemProps {
   className?: string
@@ -16,15 +17,7 @@ interface SidebarItemProps {
 const Sidebar = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'>>(
   ({ children, className, ...props }, ref) => {
     return (
-      <div
-        className={cn(
-          'flex h-screen w-[220px] bg-dark-700 pt-[72px] pb-9 border-r-[1px] border-dark-300',
-          className
-        )}
-        ref={ref}
-        {...props}
-        data-sidebar={'sidebar'}
-      >
+      <div className={cn(s.sidebar, className)} ref={ref} {...props} data-sidebar={'sidebar'}>
         {children}
       </div>
     )
@@ -37,7 +30,7 @@ const SidebarContent = React.forwardRef<HTMLDivElement, React.ComponentProps<'di
   ({ className, ...props }, ref) => {
     return (
       <div
-        className={cn('flex flex-col justify-between h-full mx-auto', className)}
+        className={cn(s['sidebar-content'], className)}
         data-sidebar={'content'}
         ref={ref}
         {...props}
@@ -52,7 +45,7 @@ const SidebarGroup = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'
   ({ className, ...props }, ref) => {
     return (
       <div
-        className={cn('flex flex-col gap-[60px]', className)}
+        className={cn(s['sidebar-group'], className)}
         data-sidebar={'group'}
         ref={ref}
         {...props}
@@ -66,7 +59,7 @@ SidebarGroup.displayName = 'SidebarGroup'
 const SidebarGroupContent = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'>>(
   ({ className, ...props }, ref) => (
     <div
-      className={cn('flex flex-col gap-[24px]', className)}
+      className={cn(s['sidebar-group-content'], className)}
       data-sidebar={'group-content'}
       ref={ref}
       {...props}
@@ -80,16 +73,7 @@ const SidebarLink = React.forwardRef<
   HTMLAnchorElement,
   { isActive?: boolean; isDisabled?: boolean } & React.ComponentProps<'a'>
 >(({ className, isActive, isDisabled, ...props }, ref) => (
-  <a
-    className={cn(
-      'flex items-center gap-3 text-light-100 text-regular_14 size-max rounded-sm border-2 border-input border-transparent',
-      'focus:outline-none focus:border-accent-700',
-      className
-    )}
-    data-sidebar={'link'}
-    ref={ref}
-    {...props}
-  />
+  <a className={cn(s['sidebar-link'], className)} data-sidebar={'link'} ref={ref} {...props} />
 ))
 
 SidebarLink.displayName = 'SidebarLink'
@@ -103,19 +87,16 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   title,
 }) => {
   const IconToRender = isActive ? IconActive : Icon
-  const getClassNames = () => {
-    if (isDisabled) {
-      return 'text-dark-100 fill-dark-100 cursor-not-allowed'
-    }
-    if (isActive) {
-      return 'text-accent-500 text-bold_14'
-    }
-
-    return 'text-light-100 hover:text-accent-100 hover:fill-accent-100'
-  }
 
   return (
-    <div className={cn('flex items-center gap-3', getClassNames(), className)}>
+    <div
+      className={cn(
+        s['sidebar-item'],
+        isDisabled && s['sidebar-item-disabled'],
+        isActive && s['sidebar-item-active'],
+        className
+      )}
+    >
       {IconToRender ? <IconToRender /> : null}
       <span>{title}</span>
     </div>

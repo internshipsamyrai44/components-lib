@@ -5,7 +5,7 @@
 .label {
   @apply text-regular_14 text-light-900;
 
-  &[data-disabled] {
+  &[data-disabled='true'] {
     @apply text-light-900/50;
   }
 }
@@ -21,7 +21,7 @@
 .search-icon-fill {
   @apply fill-light-900;
 
-  &[data-disabled] {
+  &[data-disabled='true'] {
     @apply fill-dark-100;
   }
 
@@ -37,11 +37,11 @@
 .input {
   @apply box-border flex bg-dark-700 text-light-900 text-regular_16 py-1.5 px-3 min-h-[36px] w-full rounded-sm border border-dark-100 placeholder:text-light-900;
 
-  &:not([data-disabled]) {
+  &:not([data-disabled='true']) {
     @apply hover:border-light-900 focus:outline-none focus:border-light-100 focus:text-light-100 focus:placeholder:text-light-100;
   }
 
-  &[data-disabled] {
+  &[data-disabled='true'] {
     @apply cursor-not-allowed placeholder:text-light-900/50 hover:border-light-900/50;
   }
 
@@ -65,11 +65,11 @@
 .password-toggle-icon {
   @apply fill-light-100;
 
-  &[data-disabled] {
+  &[data-disabled='true'] {
     @apply fill-dark-100;
   }
 }
 
 .input-error-message {
-  @apply text-regular_14 text-danger-500 min-h-6 overflow-hidden whitespace-nowrap text-ellipsis;
+  @apply text-regular_14 text-danger-500 min-h-6;
 }

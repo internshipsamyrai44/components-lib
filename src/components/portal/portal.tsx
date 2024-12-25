@@ -23,7 +23,7 @@ type PortalProps = {
   id: string;
   children: React.ReactNode;
 };
-const Portal = (props: PortalProps) => {
+export const Portal = (props: PortalProps) => {
   const { id, children } = props;
   const [container, setContainer] = useState<HTMLElement>();
 
@@ -43,4 +43,3 @@ const Portal = (props: PortalProps) => {
 };
 
 export { createContainer, PORTAL_ERROR_MSG };
-export default Portal;
