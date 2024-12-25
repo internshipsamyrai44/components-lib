@@ -1,0 +1,31 @@
+.sidebar {
+  @apply flex h-screen w-[220px] bg-dark-700 pt-[72px] pb-9 border-r-[1px] border-dark-300;
+}
+
+.sidebar-content {
+  @apply flex flex-col justify-between h-full mx-auto;
+}
+
+.sidebar-group {
+  @apply flex flex-col gap-[60px];
+}
+
+.sidebar-group-content {
+  @apply flex flex-col gap-[24px];
+}
+
+.sidebar-link {
+  @apply flex items-center gap-3 text-regular_14 size-max rounded-sm border-2 border-transparent focus:outline-none focus:border-accent-700;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-3 text-light-100 hover:text-accent-100 hover:fill-accent-100;
+}
+
+.sidebar-item-disabled {
+  @apply text-dark-100 fill-dark-100 cursor-not-allowed;
+}
+
+.sidebar-item-active {
+  @apply text-accent-500 text-bold_14;
+}
