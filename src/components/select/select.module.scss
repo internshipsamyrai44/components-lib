@@ -1,6 +1,6 @@
 .trigger {
   @apply cursor-pointer flex items-center justify-between box-border w-full h-9 p-1.5 px-3 rounded-sm text-light-900 leading-6;
-  @apply bg-inherit border border-dark-100;
+  @apply bg-inherit border border-solid border-dark-100;
   @apply hover:text-light-100;
   @apply focus-visible:outline-none focus-visible:border-2 focus-visible:border-accent-500;
   @apply data-[state=open]:text-light-100 data-[state=open]:border-light-100 data-[state=open]:bg-dark-500;
