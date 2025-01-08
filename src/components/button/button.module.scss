@@ -5,10 +5,11 @@
     @apply outline outline-2 outline-accent-700;
   }
 
-  &.fullWidth {
+  &.full-width {
     @apply w-full;
   }
 }
+
 .primary {
   @apply text-light-100 bg-accent-500;
 
