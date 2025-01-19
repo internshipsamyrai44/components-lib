@@ -12,10 +12,7 @@
 }
 
 .container {
-  @apply border
-  border-solid
-  border-b-dark-100
-  relative
+  @apply relative
   bg-dark-300
   rounded
   pt-3
