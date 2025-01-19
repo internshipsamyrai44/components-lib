@@ -3,6 +3,8 @@ import { addDays } from 'date-fns'
 
 import { DatePicker } from './datePicker'
 
+import { action } from '@storybook/addon-actions'
+
 const meta = {
   component: DatePicker,
   title: 'Components/Date Picker',
@@ -48,5 +50,13 @@ export const DateRangeSelected: Story = {
     label: 'Date',
     range: true,
     startDate: new Date(),
+  },
+}
+
+export const OnChangeEvent: Story = {
+  args: {
+    label: 'Date',
+    onChange: action('onChange'),
+    onClick: action('onClick'),
   },
 }
