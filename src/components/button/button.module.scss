@@ -43,7 +43,7 @@
 }
 
 .outlined {
-  @apply text-accent-500 bg-transparent border-2 border-accent-500;
+  @apply text-accent-500 bg-transparent border-2 border-solid border-accent-500;
 
   &:active {
     @apply border-accent-700 text-accent-700;

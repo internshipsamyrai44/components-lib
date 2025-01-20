@@ -7,13 +7,14 @@ import { cn } from '@/lib/utils'
 import { format } from 'date-fns'
 import s from './datePicker.module.scss'
 
-interface DatePickerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface DatePickerProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onChange'> {
   date?: Date
   endDate?: Date
   errorText?: string
   label?: string
   range?: boolean
   startDate?: Date
+  onChange?: (date: Date | DateRange | undefined) => void
 }
 
 export function DatePicker({
@@ -24,6 +25,7 @@ export function DatePicker({
   label,
   range = false,
   startDate,
+  onChange,
   ...props
 }: DatePickerProps) {
   const [dateRange, setDateRange] = useState<DateRange | undefined>({
@@ -46,6 +48,15 @@ export function DatePicker({
     popoverText = <span>Pick a date</span>
   }
 
+  const handleSelect = (date: Date | DateRange | undefined) => {
+    if (range) {
+      setDateRange(date as DateRange)
+    } else {
+      setSelected(date as Date)
+    }
+    onChange?.(date)
+  }
+
   const CalendarIcon = open ? CalendarClassic : CalendarOutlineIcon
 
   return (
@@ -62,9 +73,9 @@ export function DatePicker({
               open && s['is-open'],
               errorText && s['is-error']
             )}
-            disabled={props.disabled}
             id={'date'}
             variant={'outlined'}
+            {...props}
           >
             {popoverText}
             <CalendarIcon className={cn(s.icon, errorText && s['is-error'])} />
@@ -76,14 +87,14 @@ export function DatePicker({
             <Calendar
               defaultMonth={dateRange?.from || new Date()}
               mode={'range'}
-              onSelect={setDateRange}
+              onSelect={handleSelect}
               selected={dateRange}
             />
           ) : (
             <Calendar
               defaultMonth={date}
               mode={'single'}
-              onSelect={setSelected}
+              onSelect={handleSelect}
               selected={selected}
             />
           )}

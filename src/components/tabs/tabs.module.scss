@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .tabs {
   @apply inline-flex flex-col;
 
@@ -24,13 +20,13 @@
   @apply active:bg-accent-100 active:bg-opacity-15;
   @apply hover:bg-accent-900 hover:bg-opacity-25;
   @apply focus-visible:outline-2 focus-visible:outline-accent-700 focus-visible:outline focus-visible:rounded-sm;
-  @apply disabled:text-dark-300 disabled:border-b-dark-300 ;
-@apply data-[state=active]:text-accent-500 data-[state=active]:border-b-accent-500 data-[state=active]:disabled:text-accent-900 data-[state=active]:disabled:border-b-accent-900;
+  @apply disabled:text-dark-300 disabled:border-b-dark-300 disabled:pointer-events-none;
+  @apply data-[state=active]:text-accent-500 data-[state=active]:border-b-accent-500 data-[state=active]:disabled:text-accent-900 data-[state=active]:disabled:border-b-accent-900;
 
-  &:active {
+  &.data-[state='active'] {
     @apply text-accent-500 border-b-accent-500 bg-accent-100 bg-opacity-15;
 
-    &:disabled {
+    &.data-[state='disabled'] {
       @apply text-accent-900 border-b-accent-900;
     }
   }
