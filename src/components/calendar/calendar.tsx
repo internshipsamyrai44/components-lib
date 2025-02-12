@@ -29,6 +29,7 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         weekday: s.weekday,
         weekdays: s.weekdays,
         weeks: s.weeks,
+        disabled: s.disabled,
         ...classNames,
       }}
       components={{
