@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DateRange } from 'react-day-picker'
+import { DateRange, Matcher } from 'react-day-picker'
 
 import { CalendarIcon as CalendarClassic, CalendarOutlineIcon } from '@/assets/icons'
 import { Button, Calendar, Popover, PopoverContent, PopoverTrigger } from '@/components'
@@ -8,6 +8,7 @@ import { format } from 'date-fns'
 import s from './datePicker.module.scss'
 
 interface DatePickerProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onChange'> {
+  disabledDates?: Matcher
   date?: Date
   endDate?: Date
   errorText?: string
@@ -25,6 +26,7 @@ export function DatePicker({
   label,
   range = false,
   startDate,
+  disabledDates,
   onChange,
   ...props
 }: DatePickerProps) {
@@ -92,10 +94,12 @@ export function DatePicker({
             />
           ) : (
             <Calendar
+              endMonth={dateRange?.to || new Date()}
               defaultMonth={date}
               mode={'single'}
               onSelect={handleSelect}
               selected={selected}
+              disabled={disabledDates}
             />
           )}
         </PopoverContent>
