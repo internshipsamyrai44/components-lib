@@ -1,9 +1,9 @@
 .input-container {
-  @apply flex flex-col w-full gap-2;
+  @apply flex flex-col w-full gap-1;
 }
 
 .label {
-  @apply text-regular_14 text-light-900;
+  @apply text-regular_14 text-light-900 leading-none;
 
   &[data-disabled='true'] {
     @apply text-light-900/50;
@@ -71,5 +71,5 @@
 }
 
 .input-error-message {
-  @apply text-regular_14 text-danger-500 min-h-6;
+  @apply text-regular_14 text-danger-500 leading-none;
 }
