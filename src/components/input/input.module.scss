@@ -8,6 +8,9 @@
   &[data-disabled='true'] {
     @apply text-light-900/50;
   }
+  span {
+    @apply text-danger-500 ;
+  }
 }
 
 .input-wrapper {
