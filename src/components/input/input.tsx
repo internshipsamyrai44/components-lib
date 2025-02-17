@@ -1,7 +1,9 @@
 import * as React from 'react'
 import { ChangeEvent, KeyboardEvent, useState } from 'react'
+
 import { EyeIcon, EyeOffIcon, SearchIcon } from '@/assets/icons'
 import { cn } from '@/lib/utils'
+
 import s from './input.module.scss'
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -26,6 +28,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       onEnter,
       onKeyDown,
       placeholder,
+      required,
       type = 'text',
       value,
       ...props
@@ -55,8 +58,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div className={cn(s['input-container'], className)}>
-        <label data-disabled={disabled} className={s.label}>
+        <label className={s.label} data-disabled={disabled}>
           {label}
+          {required && <span className={s.required}>*</span>}
         </label>
         <div className={s['input-wrapper']}>
           {isSearch && (
@@ -64,8 +68,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               <SearchIcon
                 className={cn(s['search-icon-fill'], isFocused && s['search-icon-fill-focus'])}
                 data-disabled={disabled}
-                data-value={value}
                 data-error={errorMessage}
+                data-value={value}
               />
             </span>
           )}
@@ -73,9 +77,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             aria-invalid={!!errorMessage}
             aria-label={label}
             className={cn(s.input, isSearch && s['input-search'], isFocused && s['input-focused'])}
-            disabled={disabled}
             data-disabled={disabled}
             data-error={errorMessage}
+            disabled={disabled}
             onBlur={() => setIsFocused(false)}
             onChange={handleChange}
             onFocus={() => setIsFocused(true)}
@@ -96,7 +100,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               {showPassword ? (
                 <EyeOffIcon />
               ) : (
-                <EyeIcon data-disabled={disabled} className={s['password-toggle-icon']} />
+                <EyeIcon className={s['password-toggle-icon']} data-disabled={disabled} />
               )}
             </button>
           )}
