@@ -11,7 +11,7 @@
 }
 
 .button {
-  @apply flex justify-between text-left text-regular_16 text-light-100 border-dark-300 px-3 py-1.5 w-[158px] disabled:cursor-not-allowed disabled:text-light-900 disabled:border-dark-300;
+  @apply flex justify-between text-left text-regular_16 text-light-100 border-dark-300 px-3 py-1.5 disabled:cursor-not-allowed disabled:text-light-900 disabled:border-dark-300;
 
   &.is-range {
     @apply w-[262px];

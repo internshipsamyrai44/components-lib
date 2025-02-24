@@ -20,6 +20,16 @@ export const Default: Story = {
   },
 }
 
+export const Required: Story = {
+  args: {
+    id: 'name',
+    label: 'Name',
+    placeholder: 'Name',
+    required: true,
+    type: 'text',
+  },
+}
+
 export const Password: Story = {
   args: {
     id: 'password',
