@@ -13,9 +13,7 @@
     rounded-[50%];
 
   &:not(.is-disabled) {
-    @apply hover:bg-dark-300
-    active:bg-dark-100
-    focus-within:bg-dark-300;
+    @apply has-[.root:hover]:bg-dark-300 has-[.root:active]:bg-dark-100;
   }
 }
 

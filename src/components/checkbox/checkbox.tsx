@@ -21,6 +21,7 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
       <div className={cn(style.container, className)}>
         <div className={cn(style.wrapper, props.disabled ? style['is-disabled'] : '')}>
           <CheckboxPrimitive.Root
+            id={finalId}
             className={style.root}
             onCheckedChange={onChange}
             ref={ref}
