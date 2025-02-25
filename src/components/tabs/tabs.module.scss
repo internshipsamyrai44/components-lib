@@ -15,7 +15,7 @@
 }
 
 .tabsTrigger {
-  @apply bg-transparent flex-1 text-dark-100 py-1.5 px-6 border-b-2 border-b-dark-100 border-solid text-h3 cursor-pointer;
+  @apply bg-transparent flex-grow text-dark-100 py-1.5 px-6 border-b-2 border-b-dark-100 border-solid text-h3 cursor-pointer;
 
   @apply active:bg-accent-100 active:bg-opacity-15;
   @apply hover:bg-accent-900 hover:bg-opacity-25;
