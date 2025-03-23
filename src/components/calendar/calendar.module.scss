@@ -8,6 +8,18 @@
 
 .caption-label {
   @apply text-bold_16 ml-2;
+
+  &[aria-hidden='true'] {
+    @apply hidden;
+  }
+}
+
+.dropdown {
+  @apply bg-dark-500 text-light-100 outline-none;
+}
+
+.dropdowns {
+  @apply text-bold_16;
 }
 
 .day {
