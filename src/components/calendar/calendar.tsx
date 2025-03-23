@@ -13,6 +13,8 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
       className={cn(s['day-picker'], className)}
       classNames={{
         caption: s.caption,
+        dropdown: s.dropdown,
+        dropdowns: s.dropdowns,
         caption_label: s['caption-label'],
         day: s.day,
         day_button: s['day-button'],

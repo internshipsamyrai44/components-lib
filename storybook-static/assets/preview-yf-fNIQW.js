@@ -1,0 +1,1 @@
+import{N as a}from"./index-DJif32fJ.js";import"./index-BYqfdl9-.js";const o={parameters:{controls:{matchers:{color:/(background|color)$/i,date:/Date$/i}},docs:{theme:a.dark},backgrounds:{default:"dark",values:[{name:"dark",value:"#000000"}]}}};export{o as default};
