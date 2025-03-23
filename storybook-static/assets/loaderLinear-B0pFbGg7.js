@@ -1,0 +1,1 @@
+import{j as e}from"./jsx-runtime-DcL3VY2S.js";const o="_loader_1rwub_1",r={loader:o},s=()=>e.jsx("div",{className:r.loader});s.__docgenInfo={description:"",methods:[],displayName:"LoaderLinear"};export{s as L};

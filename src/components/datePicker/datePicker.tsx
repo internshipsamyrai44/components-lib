@@ -87,19 +87,23 @@ export function DatePicker({
         <PopoverContent align={'start'} className={s['popover-content']}>
           {range ? (
             <Calendar
+              startMonth={new Date(1901, 0)}
               defaultMonth={dateRange?.from || new Date()}
               mode={'range'}
               onSelect={handleSelect}
               selected={dateRange}
+              captionLayout="dropdown-years"
             />
           ) : (
             <Calendar
+              startMonth={new Date(1901, 0)}
               endMonth={dateRange?.to || new Date()}
               defaultMonth={date}
               mode={'single'}
               onSelect={handleSelect}
               selected={selected}
               disabled={disabledDates}
+              captionLayout="dropdown-years"
             />
           )}
         </PopoverContent>
