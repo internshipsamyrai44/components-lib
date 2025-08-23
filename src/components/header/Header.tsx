@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className={s['header-container']}>
       <Typography as={'a'} variant={'large'} href={'/'}>
-        Inctagram
+        Pictorial
       </Typography>
       <div className={s['functional-container']}>
         <div className={s['select']}>
